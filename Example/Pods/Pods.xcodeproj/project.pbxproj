@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1474B1E736A2705DE4FD3F7BF3E85F29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */; };
+		167F25A4DA6F6B0E1819D00E6AFC3C4C /* CALayer+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26CBC28905632A70ED7C76E6DE3E8F0A /* QQCorner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */; };
+		2A677761A78C62E62CB8C80AB933516F /* UIImage+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */; };
+		385E218996FDF75A34C2941354F2DA8F /* UIView+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C8F97F5663D562A2E8A8B316123C766 /* UIView+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */; };
+		4716C823B6281BC3039523030108F0B9 /* CALayer+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */; };
+		61B9DD3F32359B0B5B9FE54280AB7CF6 /* QQCornerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C5FB419B1AC9FE64D8E190793CF15E /* QQCornerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */; };
+		649B09350F989C80AA56D2BFCABCAFD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		822F81CC036FC3CEFBC36C92726555DF /* UIImage+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		931B88A328F3349081319BB5FFA0827B /* Pods-QQCorner_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F84F429D8C4FFFEA394BBD3BD8C10C /* Pods-QQCorner_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B2332D4FB5D7D9F0508EDE45D100AD6 /* QQCorner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C93B789D4A1EE6970C58D47822474C4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		CD3D9D1E164CCFA4443122A652BDA147 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */; };
+		CE7F804C6F64C00A2ED9CB5EF237E136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		D18169A7551FB6ECDAD43770D3DB4EBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89163E94743FDDD60913C47150E225B /* UIKit.framework */; };
+		D857086901255073FD02CEDD98C5BBD3 /* Pods-QQCorner_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FAC8B7453B38EA80639577BBABD131 /* Pods-QQCorner_Tests-dummy.m */; };
+		EC2A1A18736DCD4C0424B862B0A77542 /* Pods-QQCorner_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D47E767AF36FC29099ED5D0D567190B8 /* Pods-QQCorner_Example-dummy.m */; };
+		EE3C88C606C4369D7B7B0884C56A910A /* Pods-QQCorner_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A6A54075E57E3511240DA06CE5DF3F /* Pods-QQCorner_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		264CDCCE2C637393E51A94CC39006403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20D9C886ADDF1BEEBA49144752C84F4E;
+			remoteInfo = "Pods-QQCorner_Example";
+		};
+		9E2E868B669067B7D76D06B51566E3E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2980356F5CD6EA303C499EC4BF3F7099;
+			remoteInfo = QQCorner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04BBFC3AC0E97312E944E139C66903AB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		05E9DC8C6645E841E4EBA601DBE4EAF8 /* Pods-QQCorner_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Example.release.xcconfig"; sourceTree = "<group>"; };
+		091DA79459D344EA393EEE3ECF50349F /* Pods-QQCorner_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QQCornerModel.m; path = QQCorner/Classes/QQCornerModel.m; sourceTree = "<group>"; };
+		24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+QQCorner.m"; path = "QQCorner/Classes/CALayer+QQCorner.m"; sourceTree = "<group>"; };
+		2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+QQCorner.m"; path = "QQCorner/Classes/UIImage+QQCorner.m"; sourceTree = "<group>"; };
+		36783E1BAFFF07DB01D3EC9146C9CE81 /* Pods-QQCorner_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Example-resources.sh"; sourceTree = "<group>"; };
+		37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		43F84F429D8C4FFFEA394BBD3BD8C10C /* Pods-QQCorner_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QQCorner_Example-umbrella.h"; sourceTree = "<group>"; };
+		4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QQCornerModel.h; path = QQCorner/Classes/QQCornerModel.h; sourceTree = "<group>"; };
+		4BDF319F71025E3BE9572E4B5930C32B /* Pods-QQCorner_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QQCorner_Tests.modulemap"; sourceTree = "<group>"; };
+		579E68FA16E66522CEBAF5FEBC7810A8 /* Pods-QQCorner_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		59B1DE4F790644559FB9713D90DF18AC /* Pods-QQCorner_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QQCorner_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+QQCorner.h"; path = "QQCorner/Classes/CALayer+QQCorner.h"; sourceTree = "<group>"; };
+		63C4CB597563497A8BA551EF556DECD4 /* Pods-QQCorner_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QQCorner_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		64AF57A2738B316EEF015D319102434F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F2E10A16D196A883FD08FD47353DA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B6CE8029A61A26D1D236227D7A1B667 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7849E564DC6F28BBF9A483A5B0B56499 /* Pods-QQCorner_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7CD993E0D2CDF37104F5439259798824 /* Pods-QQCorner_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QQCorner_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+QQCorner.m"; path = "QQCorner/Classes/UIView+QQCorner.m"; sourceTree = "<group>"; };
+		81DC58001C9E5DE2A6EAAA265362E4E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C21BBEE551EC6BD954275BFBD99F3FE /* Pods-QQCorner_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93E6E60B99A166321177699021337F74 /* QQCorner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QQCorner.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95A6A54075E57E3511240DA06CE5DF3F /* Pods-QQCorner_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QQCorner_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+QQCorner.h"; path = "QQCorner/Classes/UIImage+QQCorner.h"; sourceTree = "<group>"; };
+		A5DFD94B1EF9B11862BBD4018C8A14E3 /* Pods-QQCorner_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Tests-resources.sh"; sourceTree = "<group>"; };
+		B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+QQCorner.h"; path = "QQCorner/Classes/UIView+QQCorner.h"; sourceTree = "<group>"; };
+		B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QQCorner-dummy.m"; sourceTree = "<group>"; };
+		C23E77ECA3560F3A8E90F3E6FBE51ECB /* Pods-QQCorner_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3F2016FB36EC4A7522554D2FA27F8EE /* Pods-QQCorner_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QQCorner_Example.modulemap"; sourceTree = "<group>"; };
+		C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QQCorner.xcconfig; sourceTree = "<group>"; };
+		C5FAC8B7453B38EA80639577BBABD131 /* Pods-QQCorner_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QQCorner_Tests-dummy.m"; sourceTree = "<group>"; };
+		D088939117E72F0E97D40B4D5924186D /* Pods_QQCorner_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QQCorner_Tests.framework; path = "Pods-QQCorner_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D47E767AF36FC29099ED5D0D567190B8 /* Pods-QQCorner_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QQCorner_Example-dummy.m"; sourceTree = "<group>"; };
+		D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D6A2DD0E53A817AAC97DB62E5C54AB8D /* QQCorner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QQCorner.modulemap; sourceTree = "<group>"; };
+		D6C8A9A21CECA23EB6742C33925A6B0F /* QQCorner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-prefix.pch"; sourceTree = "<group>"; };
+		E89163E94743FDDD60913C47150E225B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F396E1428F34277C8C96DCFB61498BF9 /* QQCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QQCorner.framework; path = QQCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E87E546E5D4958AFBBC8F311915450 /* Pods-QQCorner_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QQCorner_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD8BF1F3E11B9C6D42A5A955714DD57C /* Pods_QQCorner_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QQCorner_Example.framework; path = "Pods-QQCorner_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BD5AB2A66CF9BF8D742FC1B4D7DC9AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD3D9D1E164CCFA4443122A652BDA147 /* CoreGraphics.framework in Frameworks */,
+				649B09350F989C80AA56D2BFCABCAFD6 /* Foundation.framework in Frameworks */,
+				1474B1E736A2705DE4FD3F7BF3E85F29 /* QuartzCore.framework in Frameworks */,
+				D18169A7551FB6ECDAD43770D3DB4EBB /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D99BAF9AF4E3080818A58CC019BCC839 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7F804C6F64C00A2ED9CB5EF237E136 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCC0496BE403F89477B7EEFA51FBEE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C93B789D4A1EE6970C58D47822474C4D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53C8B4AB97860F06FE722851EA867B18 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		404BBA31250DF4A3F985897C0A40BAB4 /* QQCorner */ = {
+			isa = PBXGroup;
+			children = (
+				5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */,
+				24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */,
+				4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */,
+				0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */,
+				9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */,
+				2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */,
+				B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */,
+				7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */,
+				7A2535BFE3323F81631D508926460FF6 /* Pod */,
+				7F09C416A7277CA443988E4707E01C62 /* Support Files */,
+			);
+			name = QQCorner;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		53C8B4AB97860F06FE722851EA867B18 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */,
+				D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */,
+				B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */,
+				E89163E94743FDDD60913C47150E225B /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6A7B54288534E9EBB1B5D1BC3222B497 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD8BF1F3E11B9C6D42A5A955714DD57C /* Pods_QQCorner_Example.framework */,
+				D088939117E72F0E97D40B4D5924186D /* Pods_QQCorner_Tests.framework */,
+				F396E1428F34277C8C96DCFB61498BF9 /* QQCorner.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A2535BFE3323F81631D508926460FF6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6B6CE8029A61A26D1D236227D7A1B667 /* LICENSE */,
+				93E6E60B99A166321177699021337F74 /* QQCorner.podspec */,
+				04BBFC3AC0E97312E944E139C66903AB /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				B87216657B7EF8A88C26D4E902FDB7BC /* Development Pods */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				6A7B54288534E9EBB1B5D1BC3222B497 /* Products */,
+				E786A4C92DB5F0E67239146E2A4D3E82 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F09C416A7277CA443988E4707E01C62 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				81DC58001C9E5DE2A6EAAA265362E4E5 /* Info.plist */,
+				D6A2DD0E53A817AAC97DB62E5C54AB8D /* QQCorner.modulemap */,
+				C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */,
+				BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */,
+				D6C8A9A21CECA23EB6742C33925A6B0F /* QQCorner-prefix.pch */,
+				924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/QQCorner";
+			sourceTree = "<group>";
+		};
+		B87216657B7EF8A88C26D4E902FDB7BC /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				404BBA31250DF4A3F985897C0A40BAB4 /* QQCorner */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D345C6BF052AEE0C2B7F62E45033C796 /* Pods-QQCorner_Example */ = {
+			isa = PBXGroup;
+			children = (
+				64AF57A2738B316EEF015D319102434F /* Info.plist */,
+				C3F2016FB36EC4A7522554D2FA27F8EE /* Pods-QQCorner_Example.modulemap */,
+				59B1DE4F790644559FB9713D90DF18AC /* Pods-QQCorner_Example-acknowledgements.markdown */,
+				F6E87E546E5D4958AFBBC8F311915450 /* Pods-QQCorner_Example-acknowledgements.plist */,
+				D47E767AF36FC29099ED5D0D567190B8 /* Pods-QQCorner_Example-dummy.m */,
+				7849E564DC6F28BBF9A483A5B0B56499 /* Pods-QQCorner_Example-frameworks.sh */,
+				36783E1BAFFF07DB01D3EC9146C9CE81 /* Pods-QQCorner_Example-resources.sh */,
+				43F84F429D8C4FFFEA394BBD3BD8C10C /* Pods-QQCorner_Example-umbrella.h */,
+				579E68FA16E66522CEBAF5FEBC7810A8 /* Pods-QQCorner_Example.debug.xcconfig */,
+				05E9DC8C6645E841E4EBA601DBE4EAF8 /* Pods-QQCorner_Example.release.xcconfig */,
+			);
+			name = "Pods-QQCorner_Example";
+			path = "Target Support Files/Pods-QQCorner_Example";
+			sourceTree = "<group>";
+		};
+		E371AFE9420DFF4685191AE2696B18CF /* Pods-QQCorner_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				68F2E10A16D196A883FD08FD47353DA7 /* Info.plist */,
+				4BDF319F71025E3BE9572E4B5930C32B /* Pods-QQCorner_Tests.modulemap */,
+				63C4CB597563497A8BA551EF556DECD4 /* Pods-QQCorner_Tests-acknowledgements.markdown */,
+				7CD993E0D2CDF37104F5439259798824 /* Pods-QQCorner_Tests-acknowledgements.plist */,
+				C5FAC8B7453B38EA80639577BBABD131 /* Pods-QQCorner_Tests-dummy.m */,
+				8C21BBEE551EC6BD954275BFBD99F3FE /* Pods-QQCorner_Tests-frameworks.sh */,
+				A5DFD94B1EF9B11862BBD4018C8A14E3 /* Pods-QQCorner_Tests-resources.sh */,
+				95A6A54075E57E3511240DA06CE5DF3F /* Pods-QQCorner_Tests-umbrella.h */,
+				C23E77ECA3560F3A8E90F3E6FBE51ECB /* Pods-QQCorner_Tests.debug.xcconfig */,
+				091DA79459D344EA393EEE3ECF50349F /* Pods-QQCorner_Tests.release.xcconfig */,
+			);
+			name = "Pods-QQCorner_Tests";
+			path = "Target Support Files/Pods-QQCorner_Tests";
+			sourceTree = "<group>";
+		};
+		E786A4C92DB5F0E67239146E2A4D3E82 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D345C6BF052AEE0C2B7F62E45033C796 /* Pods-QQCorner_Example */,
+				E371AFE9420DFF4685191AE2696B18CF /* Pods-QQCorner_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		314D9F0B6FBB2324029EE163635ED3F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				931B88A328F3349081319BB5FFA0827B /* Pods-QQCorner_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D922A15D9AF19B688EA6B8F21DFAB2F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167F25A4DA6F6B0E1819D00E6AFC3C4C /* CALayer+QQCorner.h in Headers */,
+				9B2332D4FB5D7D9F0508EDE45D100AD6 /* QQCorner-umbrella.h in Headers */,
+				61B9DD3F32359B0B5B9FE54280AB7CF6 /* QQCornerModel.h in Headers */,
+				822F81CC036FC3CEFBC36C92726555DF /* UIImage+QQCorner.h in Headers */,
+				385E218996FDF75A34C2941354F2DA8F /* UIView+QQCorner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC87338FC078653AC7D27BB1D6E2FF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3C88C606C4369D7B7B0884C56A910A /* Pods-QQCorner_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		20D9C886ADDF1BEEBA49144752C84F4E /* Pods-QQCorner_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3597044C5DBB0C5FF09EA47640D93AC7 /* Build configuration list for PBXNativeTarget "Pods-QQCorner_Example" */;
+			buildPhases = (
+				1F8FC84F4BFC45603FBFF48E16FBF726 /* Sources */,
+				D99BAF9AF4E3080818A58CC019BCC839 /* Frameworks */,
+				314D9F0B6FBB2324029EE163635ED3F6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A94A0AF21647DDE02C95EF039FE2F5A6 /* PBXTargetDependency */,
+			);
+			name = "Pods-QQCorner_Example";
+			productName = "Pods-QQCorner_Example";
+			productReference = FD8BF1F3E11B9C6D42A5A955714DD57C /* Pods_QQCorner_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2980356F5CD6EA303C499EC4BF3F7099 /* QQCorner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDC9EE60D169AC6239B9B8D7854CF66D /* Build configuration list for PBXNativeTarget "QQCorner" */;
+			buildPhases = (
+				91ACF0FDD253C8AAD82A06307D765E82 /* Sources */,
+				1BD5AB2A66CF9BF8D742FC1B4D7DC9AD /* Frameworks */,
+				D922A15D9AF19B688EA6B8F21DFAB2F6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQCorner;
+			productName = QQCorner;
+			productReference = F396E1428F34277C8C96DCFB61498BF9 /* QQCorner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AAA34569744056A3EB2FD41EA29C8A1F /* Pods-QQCorner_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3378089BED2533C5FDEC276865258195 /* Build configuration list for PBXNativeTarget "Pods-QQCorner_Tests" */;
+			buildPhases = (
+				57E6F3855E2A6ABB1DF7BF44437CEC92 /* Sources */,
+				FCCC0496BE403F89477B7EEFA51FBEE3 /* Frameworks */,
+				DDC87338FC078653AC7D27BB1D6E2FF1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AE7589936F6BD1DEAE5DA7E805A2DC9 /* PBXTargetDependency */,
+			);
+			name = "Pods-QQCorner_Tests";
+			productName = "Pods-QQCorner_Tests";
+			productReference = D088939117E72F0E97D40B4D5924186D /* Pods_QQCorner_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6A7B54288534E9EBB1B5D1BC3222B497 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20D9C886ADDF1BEEBA49144752C84F4E /* Pods-QQCorner_Example */,
+				AAA34569744056A3EB2FD41EA29C8A1F /* Pods-QQCorner_Tests */,
+				2980356F5CD6EA303C499EC4BF3F7099 /* QQCorner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F8FC84F4BFC45603FBFF48E16FBF726 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2A1A18736DCD4C0424B862B0A77542 /* Pods-QQCorner_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57E6F3855E2A6ABB1DF7BF44437CEC92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D857086901255073FD02CEDD98C5BBD3 /* Pods-QQCorner_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91ACF0FDD253C8AAD82A06307D765E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4716C823B6281BC3039523030108F0B9 /* CALayer+QQCorner.m in Sources */,
+				26CBC28905632A70ED7C76E6DE3E8F0A /* QQCorner-dummy.m in Sources */,
+				63C5FB419B1AC9FE64D8E190793CF15E /* QQCornerModel.m in Sources */,
+				2A677761A78C62E62CB8C80AB933516F /* UIImage+QQCorner.m in Sources */,
+				3C8F97F5663D562A2E8A8B316123C766 /* UIView+QQCorner.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AE7589936F6BD1DEAE5DA7E805A2DC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-QQCorner_Example";
+			target = 20D9C886ADDF1BEEBA49144752C84F4E /* Pods-QQCorner_Example */;
+			targetProxy = 264CDCCE2C637393E51A94CC39006403 /* PBXContainerItemProxy */;
+		};
+		A94A0AF21647DDE02C95EF039FE2F5A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QQCorner;
+			target = 2980356F5CD6EA303C499EC4BF3F7099 /* QQCorner */;
+			targetProxy = 9E2E868B669067B7D76D06B51566E3E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		81A209C91F0A070FAB8DC48ABEF4D9D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/QQCorner/QQCorner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QQCorner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QQCorner/QQCorner.modulemap";
+				PRODUCT_MODULE_NAME = QQCorner;
+				PRODUCT_NAME = QQCorner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8809D8FE795CD37F3126C7F24BEDF467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 579E68FA16E66522CEBAF5FEBC7810A8 /* Pods-QQCorner_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QQCorner_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A70885979111869667240DBCB461D9F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091DA79459D344EA393EEE3ECF50349F /* Pods-QQCorner_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QQCorner_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QQCorner_Tests/Pods-QQCorner_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE1A465F2D2E57E21B642193354A6A12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C23E77ECA3560F3A8E90F3E6FBE51ECB /* Pods-QQCorner_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QQCorner_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QQCorner_Tests/Pods-QQCorner_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B1499327C341D6D2E55834890F74448D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/QQCorner/QQCorner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QQCorner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QQCorner/QQCorner.modulemap";
+				PRODUCT_MODULE_NAME = QQCorner;
+				PRODUCT_NAME = QQCorner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BCBFE0BBAE09C6D9F22870BEA5659222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E9DC8C6645E841E4EBA601DBE4EAF8 /* Pods-QQCorner_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QQCorner_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
+				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3378089BED2533C5FDEC276865258195 /* Build configuration list for PBXNativeTarget "Pods-QQCorner_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE1A465F2D2E57E21B642193354A6A12 /* Debug */,
+				A70885979111869667240DBCB461D9F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3597044C5DBB0C5FF09EA47640D93AC7 /* Build configuration list for PBXNativeTarget "Pods-QQCorner_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8809D8FE795CD37F3126C7F24BEDF467 /* Debug */,
+				BCBFE0BBAE09C6D9F22870BEA5659222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDC9EE60D169AC6239B9B8D7854CF66D /* Build configuration list for PBXNativeTarget "QQCorner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1499327C341D6D2E55834890F74448D /* Debug */,
+				81A209C91F0A070FAB8DC48ABEF4D9D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

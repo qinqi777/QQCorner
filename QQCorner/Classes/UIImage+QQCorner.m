@@ -1,0 +1,210 @@
+//
+//  UIImage+QQCorner.m
+//  QQCorner
+//
+//  Created by 秦琦 on 2018/10/24.
+//  Copyright © 2018 QinQi. All rights reserved.
+//
+
+#import "UIImage+QQCorner.h"
+#import "QQCornerModel.h"
+
+@implementation UIImage (QQCorner)
+
+static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
+    CGFloat imgW = size.width;
+    CGFloat imgH = size.height;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    if (@available(iOS 10.0, *)) {
+        //左上
+        [path moveToPoint:CGPointMake(radius.downLeft, 0)];
+        [path addQuadCurveToPoint:CGPointMake(0, radius.downLeft) controlPoint:CGPointZero];
+        //左上
+        [path addLineToPoint:CGPointMake(0, imgH - radius.upLeft)];
+        [path addQuadCurveToPoint:CGPointMake(radius.upLeft, imgH) controlPoint:CGPointMake(0, imgH)];
+        //右上
+        [path addLineToPoint:CGPointMake(imgW - radius.upRight, imgH)];
+        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.upRight) controlPoint:CGPointMake(imgW, imgH)];
+        //右下
+        [path addLineToPoint:CGPointMake(imgW, radius.downRight)];
+        [path addQuadCurveToPoint:CGPointMake(imgW - radius.downRight, 0) controlPoint:CGPointMake(imgW, 0)];
+    } else {
+        //左下
+        [path moveToPoint:CGPointMake(radius.downLeft, 0)];
+        [path addQuadCurveToPoint:CGPointMake(0, radius.downLeft) controlPoint:CGPointZero];
+        //左上
+        [path addLineToPoint:CGPointMake(0, imgH - radius.upLeft)];
+        [path addQuadCurveToPoint:CGPointMake(radius.upLeft, imgH) controlPoint:CGPointMake(0, imgH)];
+        //右上
+        [path addLineToPoint:CGPointMake(imgW - radius.upRight, imgH)];
+        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.upRight) controlPoint:CGPointMake(imgW, imgH)];
+        //右下
+        [path addLineToPoint:CGPointMake(imgW, radius.downRight)];
+        [path addQuadCurveToPoint:CGPointMake(imgW - radius.downRight, 0) controlPoint:CGPointMake(imgW, 0)];
+    }
+    [path closePath];
+    return path;
+}
+
+static CGContextRef qq_getBitmapContext(CGSize imgSize) {
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGContextRef context = CGBitmapContextCreate(NULL, imgSize.width * scale, imgSize.height * scale, 8, 4 * imgSize.width * scale, colorSpace, kCGImageAlphaPremultipliedFirst);
+    CGContextScaleCTM(context, scale, scale);
+    CGColorSpaceRelease(colorSpace);
+    return context;
+}
+
+static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
+    CGImageRef imageMasked = CGBitmapContextCreateImage(context);
+    UIImage *image = [UIImage imageWithCGImage:imageMasked];
+    //Don't forget to release   别忘了释放~
+    CGImageRelease(imageMasked);
+    CGContextRelease(context);
+    return image;
+}
+
++ (UIImage *)imageWithGradualChangingColor:(QQGradualChangingColor *)graColor size:(CGSize)size cornerRadius:(QQRadius)radius {
+    CAGradientLayer *graLayer = [CAGradientLayer layer];
+    graLayer.frame = (CGRect){CGPointZero, size};
+    CGFloat startX = 0, startY = 0, endX = 0, endY = 0;
+    switch (graColor.type) {
+        case QQGradualChangeTypeUpLeftToDownRight: {
+            startX = 0;
+            startY = 0;
+            endX = 1;
+            endY = 1;
+        }
+            break;
+        case QQGradualChangeTypeUpToDown: {
+            startX = 0;
+            startY = 0;
+            endX = 0;
+            endY = 1;
+        }
+            break;
+        case QQGradualChangeTypeLeftToRight: {
+            startX = 0;
+            startY = 0;
+            endX = 1;
+            endY = 0;
+        }
+            break;
+        case QQGradualChangeTypeUpRightToDownLeft: {
+            startX = 0;
+            startY = 1;
+            endX = 1;
+            endY = 0;
+        }
+            break;
+    }
+    graLayer.startPoint = CGPointMake(startX, startY);
+    graLayer.endPoint = CGPointMake(endX, endY);
+    graLayer.colors = @[(__bridge id)graColor.fromColor.CGColor, (__bridge id)graColor.toColor.CGColor];
+    graLayer.locations = @[@0.0, @1.0];
+    return [self imageWithLayer:graLayer cornerRadius:radius];
+}
+
++ (UIImage *)imageWithQQCorner:(QQCorner *)corner size:(CGSize)size {
+    if (!corner.fillColor) {
+        corner.fillColor = [UIColor clearColor];
+    }
+    UIBezierPath *path = qq_pathWithCornerRadius(corner.radius, size);
+    if (@available(iOS 10.0, *)) {
+        UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:size];
+        return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+            CGContextSetStrokeColorWithColor(rendererContext.CGContext, corner.borderColor.CGColor);
+            CGContextSetFillColorWithColor(rendererContext.CGContext, corner.fillColor.CGColor);
+            CGContextSetLineWidth(rendererContext.CGContext, corner.borderWidth);
+            [path addClip];
+            CGContextAddPath(rendererContext.CGContext, path.CGPath);
+            CGContextDrawPath(rendererContext.CGContext, kCGPathFillStroke);
+        }];
+    } else {
+        CGContextRef context = qq_getBitmapContext(size);
+        CGContextSetStrokeColorWithColor(context, corner.borderColor.CGColor);
+        CGContextSetFillColorWithColor(context, corner.fillColor.CGColor);
+        CGContextSetLineWidth(context, corner.borderWidth);
+        CGContextAddPath(context, path.CGPath);
+        CGContextClip(context);
+        CGContextDrawPath(context, kCGPathFillStroke);
+        
+        return qq_getImageFromBitmapContext(context);
+    }
+}
+
+- (UIImage *)imageByAddingCornerRadius:(QQRadius)radius {
+    UIBezierPath *path = qq_pathWithCornerRadius(radius, self.size);
+    if (@available(iOS 10.0, *)) {
+        UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:self.size];
+        return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+            [path addClip];
+            CGContextAddPath(rendererContext.CGContext, path.CGPath);
+            [self drawInRect:(CGRect){CGPointZero, self.size}];
+        }];
+    } else {
+        CGContextRef context = qq_getBitmapContext(self.size);
+        CGContextAddPath(context, path.CGPath);
+        CGContextClip(context);
+        CGContextDrawImage(context, (CGRect){CGPointZero, self.size}, self.CGImage);
+        return qq_getImageFromBitmapContext(context);
+    }
+}
+
+
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    return [self imageWithColor:color size:CGSizeMake(1, 1) cornerRadius:QQRadiusZero];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(QQRadius)radius {
+    if (@available(iOS 10.0, *)) {
+        UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:size];
+        return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+            if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
+                UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
+                [path addClip];
+                CGContextAddPath(rendererContext.CGContext, path.CGPath);
+            }
+            CGContextSetFillColorWithColor(rendererContext.CGContext, color.CGColor);
+            CGContextFillRect(rendererContext.CGContext, (CGRect){CGPointZero, size});
+        }];
+    } else {
+        CGContextRef context = qq_getBitmapContext(size);
+        if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
+            UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
+//            [path addClip];
+            CGContextAddPath(context, path.CGPath);
+            CGContextClip(context);
+        }
+        CGContextSetFillColorWithColor(context, color.CGColor);
+        CGContextFillRect(context, (CGRect){CGPointZero, size});
+        return qq_getImageFromBitmapContext(context);
+    }
+}
+
++ (UIImage *)imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius {
+    if (@available(iOS 10.0, *)) {
+        UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:layer.bounds.size];
+        return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+            if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
+                UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
+                [path addClip];
+                CGContextAddPath(rendererContext.CGContext, path.CGPath);
+            }
+            [layer renderInContext:rendererContext.CGContext];
+        }];
+    } else {
+        CGContextRef context = qq_getBitmapContext(layer.bounds.size);
+        if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
+            UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
+            //            [path addClip];
+            CGContextAddPath(context, path.CGPath);
+            CGContextClip(context);
+        }
+        [layer renderInContext:context];
+        return qq_getImageFromBitmapContext(context);
+    }
+}
+
+@end
