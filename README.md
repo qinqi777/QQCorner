@@ -32,6 +32,7 @@ pod 'QQCorner'
   
     //UIView and its subclasses
     //UIView 及其子类
+    //在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
     UILabel *testLab;
     [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMake(20, 20, 20, 20) fillColor:[UIColor cyanColor]]];
   
