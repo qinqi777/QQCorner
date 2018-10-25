@@ -47,7 +47,7 @@
         corner.borderWidth = 1;
     }
     [self.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[QQShapeLayer class]]) {
+        if ([obj isMemberOfClass:[QQShapeLayer class]]) {
             [obj removeFromSuperlayer];
         }
     }];
@@ -57,17 +57,17 @@
     CGFloat height = self.bounds.size.height;
     CGFloat width = self.bounds.size.width;
     //左下
-    [path moveToPoint:CGPointMake(radius.downLeft, 0)];
-    [path addQuadCurveToPoint:CGPointMake(0, radius.downLeft) controlPoint:CGPointZero];
+    [path moveToPoint:CGPointMake(radius.upLeft, 0)];
+    [path addQuadCurveToPoint:CGPointMake(0, radius.upLeft) controlPoint:CGPointZero];
     //左上
-    [path addLineToPoint:CGPointMake(0, height - radius.upLeft)];
-    [path addQuadCurveToPoint:CGPointMake(radius.upLeft, height) controlPoint:CGPointMake(0, height)];
+    [path addLineToPoint:CGPointMake(0, height - radius.downLeft)];
+    [path addQuadCurveToPoint:CGPointMake(radius.downLeft, height) controlPoint:CGPointMake(0, height)];
     //右上
-    [path addLineToPoint:CGPointMake(width - radius.upRight, height)];
-    [path addQuadCurveToPoint:CGPointMake(width, height - radius.upRight) controlPoint:CGPointMake(width, height)];
+    [path addLineToPoint:CGPointMake(width - radius.downRight, height)];
+    [path addQuadCurveToPoint:CGPointMake(width, height - radius.downRight) controlPoint:CGPointMake(width, height)];
     //右下
-    [path addLineToPoint:CGPointMake(width, radius.downRight)];
-    [path addQuadCurveToPoint:CGPointMake(width - radius.downRight, 0) controlPoint:CGPointMake(width, 0)];
+    [path addLineToPoint:CGPointMake(width, radius.upRight)];
+    [path addQuadCurveToPoint:CGPointMake(width - radius.upRight, 0) controlPoint:CGPointMake(width, 0)];
     [path closePath];
     cornerLayer.fillColor = fill;
     cornerLayer.strokeColor = corner.borderColor.CGColor;

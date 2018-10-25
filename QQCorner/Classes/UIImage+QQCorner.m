@@ -16,18 +16,18 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
     CGFloat imgH = size.height;
     UIBezierPath *path = [UIBezierPath bezierPath];
     if (@available(iOS 10.0, *)) {
+        //左下
+        [path moveToPoint:CGPointMake(radius.upLeft, 0)];
+        [path addQuadCurveToPoint:CGPointMake(0, radius.upLeft) controlPoint:CGPointZero];
         //左上
-        [path moveToPoint:CGPointMake(radius.downLeft, 0)];
-        [path addQuadCurveToPoint:CGPointMake(0, radius.downLeft) controlPoint:CGPointZero];
-        //左上
-        [path addLineToPoint:CGPointMake(0, imgH - radius.upLeft)];
-        [path addQuadCurveToPoint:CGPointMake(radius.upLeft, imgH) controlPoint:CGPointMake(0, imgH)];
+        [path addLineToPoint:CGPointMake(0, imgH - radius.downLeft)];
+        [path addQuadCurveToPoint:CGPointMake(radius.downLeft, imgH) controlPoint:CGPointMake(0, imgH)];
         //右上
-        [path addLineToPoint:CGPointMake(imgW - radius.upRight, imgH)];
-        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.upRight) controlPoint:CGPointMake(imgW, imgH)];
+        [path addLineToPoint:CGPointMake(imgW - radius.downRight, imgH)];
+        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.downRight) controlPoint:CGPointMake(imgW, imgH)];
         //右下
-        [path addLineToPoint:CGPointMake(imgW, radius.downRight)];
-        [path addQuadCurveToPoint:CGPointMake(imgW - radius.downRight, 0) controlPoint:CGPointMake(imgW, 0)];
+        [path addLineToPoint:CGPointMake(imgW, radius.upRight)];
+        [path addQuadCurveToPoint:CGPointMake(imgW - radius.upRight, 0) controlPoint:CGPointMake(imgW, 0)];
     } else {
         //左下
         [path moveToPoint:CGPointMake(radius.downLeft, 0)];
@@ -121,15 +121,17 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
             CGContextDrawPath(rendererContext.CGContext, kCGPathFillStroke);
         }];
     } else {
-        CGContextRef context = qq_getBitmapContext(size);
+        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetStrokeColorWithColor(context, corner.borderColor.CGColor);
         CGContextSetFillColorWithColor(context, corner.fillColor.CGColor);
-        CGContextSetLineWidth(context, corner.borderWidth);
+        CGContextSetLineWidth(context, 1);
         CGContextAddPath(context, path.CGPath);
-        CGContextClip(context);
+        [path addClip];
         CGContextDrawPath(context, kCGPathFillStroke);
-        
-        return qq_getImageFromBitmapContext(context);
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image;
     }
 }
 
@@ -173,7 +175,6 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
         CGContextRef context = qq_getBitmapContext(size);
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
-//            [path addClip];
             CGContextAddPath(context, path.CGPath);
             CGContextClip(context);
         }
@@ -198,7 +199,6 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
         CGContextRef context = qq_getBitmapContext(layer.bounds.size);
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
-            //            [path addClip];
             CGContextAddPath(context, path.CGPath);
             CGContextClip(context);
         }

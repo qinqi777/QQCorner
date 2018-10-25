@@ -1,8 +1,8 @@
 {
   "name": "QQCorner",
   "version": "0.1.0",
-  "summary": "Some categories that clip corner to UIView or UIImage.",
-  "description": "Some categories that clip corner to UIView or UIImage, that you can easily add different corners.",
+  "summary": "Some categories that add corner to UIView/CALayer or UIImage.",
+  "description": "Some categories that add corner to UIView/CALayer or UIImage, that you can easily add different corners.",
   "homepage": "https://github.com/qinqi777/QQCorner",
   "license": {
     "type": "MIT",

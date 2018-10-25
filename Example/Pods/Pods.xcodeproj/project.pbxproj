@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1474B1E736A2705DE4FD3F7BF3E85F29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */; };
-		167F25A4DA6F6B0E1819D00E6AFC3C4C /* CALayer+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26CBC28905632A70ED7C76E6DE3E8F0A /* QQCorner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */; };
-		2A677761A78C62E62CB8C80AB933516F /* UIImage+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */; };
-		385E218996FDF75A34C2941354F2DA8F /* UIView+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C8F97F5663D562A2E8A8B316123C766 /* UIView+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */; };
-		4716C823B6281BC3039523030108F0B9 /* CALayer+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */; };
-		61B9DD3F32359B0B5B9FE54280AB7CF6 /* QQCornerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63C5FB419B1AC9FE64D8E190793CF15E /* QQCornerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */; };
+		1C59265F250313B1C7D16164A61E0767 /* QQCorner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59DAB547A5E4E11E494E8F8E75479B8B /* QQCorner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26CBC28905632A70ED7C76E6DE3E8F0A /* QQCorner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C448AD1F423883967E311686B6E77D2 /* QQCorner-dummy.m */; };
+		2A677761A78C62E62CB8C80AB933516F /* UIImage+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB6A9278052D1467B2753D871AE6A63 /* UIImage+QQCorner.m */; };
+		3350BCE46BCE0690E5AE7ED72F715903 /* QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 4315CD55AC91CEBD52949B7C971301DB /* QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387D77988CD2B7C2A18668F5DF0276B8 /* CALayer+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E25146720BC64C93631DE76766D039 /* CALayer+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C8F97F5663D562A2E8A8B316123C766 /* UIView+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 282B37F0D43617E6BD71E70F59696433 /* UIView+QQCorner.m */; };
+		4716C823B6281BC3039523030108F0B9 /* CALayer+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 96862723F27D7002F05CAC173D61A176 /* CALayer+QQCorner.m */; };
+		4E6EBE2684E8201CF7C2493A351C2B58 /* UIView+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B92E66151021B70871F41A04FCEA76 /* UIView+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C5FB419B1AC9FE64D8E190793CF15E /* QQCornerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA70662B0A214B266E12832D8A1B9B98 /* QQCornerModel.m */; };
 		649B09350F989C80AA56D2BFCABCAFD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		822F81CC036FC3CEFBC36C92726555DF /* UIImage+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		931B88A328F3349081319BB5FFA0827B /* Pods-QQCorner_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F84F429D8C4FFFEA394BBD3BD8C10C /* Pods-QQCorner_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B2332D4FB5D7D9F0508EDE45D100AD6 /* QQCorner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A16B50520DF89786697E609292200899 /* QQCornerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02344101979B6EDF1EC5D2887C23900C /* QQCornerModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C93B789D4A1EE6970C58D47822474C4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
 		CD3D9D1E164CCFA4443122A652BDA147 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */; };
 		CE7F804C6F64C00A2ED9CB5EF237E136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
@@ -27,6 +27,7 @@
 		D857086901255073FD02CEDD98C5BBD3 /* Pods-QQCorner_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FAC8B7453B38EA80639577BBABD131 /* Pods-QQCorner_Tests-dummy.m */; };
 		EC2A1A18736DCD4C0424B862B0A77542 /* Pods-QQCorner_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D47E767AF36FC29099ED5D0D567190B8 /* Pods-QQCorner_Example-dummy.m */; };
 		EE3C88C606C4369D7B7B0884C56A910A /* Pods-QQCorner_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A6A54075E57E3511240DA06CE5DF3F /* Pods-QQCorner_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9F2411C6022D1D36C84152D6F0124F3 /* UIImage+QQCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 21AEBDF05220B488384EEC68B9247CD8 /* UIImage+QQCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,47 +48,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04BBFC3AC0E97312E944E139C66903AB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		02344101979B6EDF1EC5D2887C23900C /* QQCornerModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QQCornerModel.h; path = QQCorner/Classes/QQCornerModel.h; sourceTree = "<group>"; };
 		05E9DC8C6645E841E4EBA601DBE4EAF8 /* Pods-QQCorner_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Example.release.xcconfig"; sourceTree = "<group>"; };
 		091DA79459D344EA393EEE3ECF50349F /* Pods-QQCorner_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QQCornerModel.m; path = QQCorner/Classes/QQCornerModel.m; sourceTree = "<group>"; };
-		24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+QQCorner.m"; path = "QQCorner/Classes/CALayer+QQCorner.m"; sourceTree = "<group>"; };
-		2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+QQCorner.m"; path = "QQCorner/Classes/UIImage+QQCorner.m"; sourceTree = "<group>"; };
+		0D203F6B99DECE57974AB829BF9E1D71 /* QQCorner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-prefix.pch"; sourceTree = "<group>"; };
+		21AEBDF05220B488384EEC68B9247CD8 /* UIImage+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+QQCorner.h"; path = "QQCorner/Classes/UIImage+QQCorner.h"; sourceTree = "<group>"; };
+		282B37F0D43617E6BD71E70F59696433 /* UIView+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+QQCorner.m"; path = "QQCorner/Classes/UIView+QQCorner.m"; sourceTree = "<group>"; };
+		33E25146720BC64C93631DE76766D039 /* CALayer+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+QQCorner.h"; path = "QQCorner/Classes/CALayer+QQCorner.h"; sourceTree = "<group>"; };
 		36783E1BAFFF07DB01D3EC9146C9CE81 /* Pods-QQCorner_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Example-resources.sh"; sourceTree = "<group>"; };
 		37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		4315CD55AC91CEBD52949B7C971301DB /* QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QQCorner.h; path = QQCorner/Classes/QQCorner.h; sourceTree = "<group>"; };
 		43F84F429D8C4FFFEA394BBD3BD8C10C /* Pods-QQCorner_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QQCorner_Example-umbrella.h"; sourceTree = "<group>"; };
-		4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QQCornerModel.h; path = QQCorner/Classes/QQCornerModel.h; sourceTree = "<group>"; };
 		4BDF319F71025E3BE9572E4B5930C32B /* Pods-QQCorner_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QQCorner_Tests.modulemap"; sourceTree = "<group>"; };
+		4D981D7210933173DD8C6A1B1A6E5769 /* QQCorner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QQCorner.modulemap; sourceTree = "<group>"; };
 		579E68FA16E66522CEBAF5FEBC7810A8 /* Pods-QQCorner_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		592D11B63473919A579FCBB79F93C54A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		59B1DE4F790644559FB9713D90DF18AC /* Pods-QQCorner_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QQCorner_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+QQCorner.h"; path = "QQCorner/Classes/CALayer+QQCorner.h"; sourceTree = "<group>"; };
+		59DAB547A5E4E11E494E8F8E75479B8B /* QQCorner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-umbrella.h"; sourceTree = "<group>"; };
 		63C4CB597563497A8BA551EF556DECD4 /* Pods-QQCorner_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QQCorner_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		64AF57A2738B316EEF015D319102434F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67B92E66151021B70871F41A04FCEA76 /* UIView+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+QQCorner.h"; path = "QQCorner/Classes/UIView+QQCorner.h"; sourceTree = "<group>"; };
 		68F2E10A16D196A883FD08FD47353DA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B6CE8029A61A26D1D236227D7A1B667 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6C448AD1F423883967E311686B6E77D2 /* QQCorner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QQCorner-dummy.m"; sourceTree = "<group>"; };
 		7849E564DC6F28BBF9A483A5B0B56499 /* Pods-QQCorner_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7CD993E0D2CDF37104F5439259798824 /* Pods-QQCorner_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QQCorner_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+QQCorner.m"; path = "QQCorner/Classes/UIView+QQCorner.m"; sourceTree = "<group>"; };
-		81DC58001C9E5DE2A6EAAA265362E4E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8670C2660023B884A7C7C1493C4ED07D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		8C21BBEE551EC6BD954275BFBD99F3FE /* Pods-QQCorner_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93E6E60B99A166321177699021337F74 /* QQCorner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QQCorner.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		947A9ABE6FE7135976D6B1CD2763A78A /* QQCorner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QQCorner.xcconfig; sourceTree = "<group>"; };
 		95A6A54075E57E3511240DA06CE5DF3F /* Pods-QQCorner_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QQCorner_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+QQCorner.h"; path = "QQCorner/Classes/UIImage+QQCorner.h"; sourceTree = "<group>"; };
+		96862723F27D7002F05CAC173D61A176 /* CALayer+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+QQCorner.m"; path = "QQCorner/Classes/CALayer+QQCorner.m"; sourceTree = "<group>"; };
 		A5DFD94B1EF9B11862BBD4018C8A14E3 /* Pods-QQCorner_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QQCorner_Tests-resources.sh"; sourceTree = "<group>"; };
-		B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+QQCorner.h"; path = "QQCorner/Classes/UIView+QQCorner.h"; sourceTree = "<group>"; };
 		B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QQCorner-dummy.m"; sourceTree = "<group>"; };
+		B68B5220EE9500F4889915E0097FBFED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA70662B0A214B266E12832D8A1B9B98 /* QQCornerModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QQCornerModel.m; path = QQCorner/Classes/QQCornerModel.m; sourceTree = "<group>"; };
+		BBB6A9278052D1467B2753D871AE6A63 /* UIImage+QQCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+QQCorner.m"; path = "QQCorner/Classes/UIImage+QQCorner.m"; sourceTree = "<group>"; };
 		C23E77ECA3560F3A8E90F3E6FBE51ECB /* Pods-QQCorner_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QQCorner_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F2016FB36EC4A7522554D2FA27F8EE /* Pods-QQCorner_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QQCorner_Example.modulemap"; sourceTree = "<group>"; };
-		C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QQCorner.xcconfig; sourceTree = "<group>"; };
 		C5FAC8B7453B38EA80639577BBABD131 /* Pods-QQCorner_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QQCorner_Tests-dummy.m"; sourceTree = "<group>"; };
 		D088939117E72F0E97D40B4D5924186D /* Pods_QQCorner_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QQCorner_Tests.framework; path = "Pods-QQCorner_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47E767AF36FC29099ED5D0D567190B8 /* Pods-QQCorner_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QQCorner_Example-dummy.m"; sourceTree = "<group>"; };
 		D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D6A2DD0E53A817AAC97DB62E5C54AB8D /* QQCorner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QQCorner.modulemap; sourceTree = "<group>"; };
-		D6C8A9A21CECA23EB6742C33925A6B0F /* QQCorner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QQCorner-prefix.pch"; sourceTree = "<group>"; };
+		D7D9E8D6243149E11ED9BECFBEFE7967 /* QQCorner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QQCorner.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E89163E94743FDDD60913C47150E225B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F396E1428F34277C8C96DCFB61498BF9 /* QQCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QQCorner.framework; path = QQCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E87E546E5D4958AFBBC8F311915450 /* Pods-QQCorner_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QQCorner_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -133,19 +135,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		404BBA31250DF4A3F985897C0A40BAB4 /* QQCorner */ = {
+		3ED43E567F7D5DCB00A1E17CFF887B80 /* QQCorner */ = {
 			isa = PBXGroup;
 			children = (
-				5ED9683B40CCD3E769DCFE88C3248C5E /* CALayer+QQCorner.h */,
-				24BDE0CA723995275F5DFC95B4BB00E5 /* CALayer+QQCorner.m */,
-				4BDC779796696C2D8F88311CA52CAD92 /* QQCornerModel.h */,
-				0E3E22727FD763F78F75C21DBDA13B04 /* QQCornerModel.m */,
-				9BB0375FC3BD17D52D0B24703D3A8456 /* UIImage+QQCorner.h */,
-				2B2168327AD17EF2EFFCFCB04AC3100F /* UIImage+QQCorner.m */,
-				B2401271682FB5A6FE70E040129F8ABE /* UIView+QQCorner.h */,
-				7E7980E996FE06108A4FCC2B66BABFD2 /* UIView+QQCorner.m */,
-				7A2535BFE3323F81631D508926460FF6 /* Pod */,
-				7F09C416A7277CA443988E4707E01C62 /* Support Files */,
+				33E25146720BC64C93631DE76766D039 /* CALayer+QQCorner.h */,
+				96862723F27D7002F05CAC173D61A176 /* CALayer+QQCorner.m */,
+				4315CD55AC91CEBD52949B7C971301DB /* QQCorner.h */,
+				02344101979B6EDF1EC5D2887C23900C /* QQCornerModel.h */,
+				BA70662B0A214B266E12832D8A1B9B98 /* QQCornerModel.m */,
+				21AEBDF05220B488384EEC68B9247CD8 /* UIImage+QQCorner.h */,
+				BBB6A9278052D1467B2753D871AE6A63 /* UIImage+QQCorner.m */,
+				67B92E66151021B70871F41A04FCEA76 /* UIView+QQCorner.h */,
+				282B37F0D43617E6BD71E70F59696433 /* UIView+QQCorner.m */,
+				8BEC3AA08AC3D4A504CBE334BAC6FB48 /* Pod */,
+				7A8ABDBAC60E788E647CEEC6D6C2241B /* Support Files */,
 			);
 			name = QQCorner;
 			path = ../..;
@@ -172,45 +175,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7A2535BFE3323F81631D508926460FF6 /* Pod */ = {
+		7A8ABDBAC60E788E647CEEC6D6C2241B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B6CE8029A61A26D1D236227D7A1B667 /* LICENSE */,
-				93E6E60B99A166321177699021337F74 /* QQCorner.podspec */,
-				04BBFC3AC0E97312E944E139C66903AB /* README.md */,
+				B68B5220EE9500F4889915E0097FBFED /* Info.plist */,
+				4D981D7210933173DD8C6A1B1A6E5769 /* QQCorner.modulemap */,
+				947A9ABE6FE7135976D6B1CD2763A78A /* QQCorner.xcconfig */,
+				6C448AD1F423883967E311686B6E77D2 /* QQCorner-dummy.m */,
+				0D203F6B99DECE57974AB829BF9E1D71 /* QQCorner-prefix.pch */,
+				59DAB547A5E4E11E494E8F8E75479B8B /* QQCorner-umbrella.h */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/QQCorner";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				B87216657B7EF8A88C26D4E902FDB7BC /* Development Pods */,
+				C5BB2FB297D08C8130E354367C63C600 /* Development Pods */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
 				6A7B54288534E9EBB1B5D1BC3222B497 /* Products */,
 				E786A4C92DB5F0E67239146E2A4D3E82 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F09C416A7277CA443988E4707E01C62 /* Support Files */ = {
+		8BEC3AA08AC3D4A504CBE334BAC6FB48 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				81DC58001C9E5DE2A6EAAA265362E4E5 /* Info.plist */,
-				D6A2DD0E53A817AAC97DB62E5C54AB8D /* QQCorner.modulemap */,
-				C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */,
-				BD3F5AA8D15D0AF1CBCF91A1A9121A72 /* QQCorner-dummy.m */,
-				D6C8A9A21CECA23EB6742C33925A6B0F /* QQCorner-prefix.pch */,
-				924710CDC4925A376B8DBB9F314341F9 /* QQCorner-umbrella.h */,
+				8670C2660023B884A7C7C1493C4ED07D /* LICENSE */,
+				D7D9E8D6243149E11ED9BECFBEFE7967 /* QQCorner.podspec */,
+				592D11B63473919A579FCBB79F93C54A /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/QQCorner";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		B87216657B7EF8A88C26D4E902FDB7BC /* Development Pods */ = {
+		C5BB2FB297D08C8130E354367C63C600 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				404BBA31250DF4A3F985897C0A40BAB4 /* QQCorner */,
+				3ED43E567F7D5DCB00A1E17CFF887B80 /* QQCorner */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -263,23 +266,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		246BFF4E165E18C36FAF41B1EDD74633 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387D77988CD2B7C2A18668F5DF0276B8 /* CALayer+QQCorner.h in Headers */,
+				1C59265F250313B1C7D16164A61E0767 /* QQCorner-umbrella.h in Headers */,
+				3350BCE46BCE0690E5AE7ED72F715903 /* QQCorner.h in Headers */,
+				A16B50520DF89786697E609292200899 /* QQCornerModel.h in Headers */,
+				F9F2411C6022D1D36C84152D6F0124F3 /* UIImage+QQCorner.h in Headers */,
+				4E6EBE2684E8201CF7C2493A351C2B58 /* UIView+QQCorner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		314D9F0B6FBB2324029EE163635ED3F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				931B88A328F3349081319BB5FFA0827B /* Pods-QQCorner_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D922A15D9AF19B688EA6B8F21DFAB2F6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				167F25A4DA6F6B0E1819D00E6AFC3C4C /* CALayer+QQCorner.h in Headers */,
-				9B2332D4FB5D7D9F0508EDE45D100AD6 /* QQCorner-umbrella.h in Headers */,
-				61B9DD3F32359B0B5B9FE54280AB7CF6 /* QQCornerModel.h in Headers */,
-				822F81CC036FC3CEFBC36C92726555DF /* UIImage+QQCorner.h in Headers */,
-				385E218996FDF75A34C2941354F2DA8F /* UIView+QQCorner.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +322,7 @@
 			buildPhases = (
 				91ACF0FDD253C8AAD82A06307D765E82 /* Sources */,
 				1BD5AB2A66CF9BF8D742FC1B4D7DC9AD /* Frameworks */,
-				D922A15D9AF19B688EA6B8F21DFAB2F6 /* Headers */,
+				246BFF4E165E18C36FAF41B1EDD74633 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -424,7 +428,7 @@
 /* Begin XCBuildConfiguration section */
 		81A209C91F0A070FAB8DC48ABEF4D9D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */;
+			baseConfigurationReference = 947A9ABE6FE7135976D6B1CD2763A78A /* QQCorner.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -618,7 +622,7 @@
 		};
 		B1499327C341D6D2E55834890F74448D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4B8A6C368AAADDDFCEFAFEC3DA61E16 /* QQCorner.xcconfig */;
+			baseConfigurationReference = 947A9ABE6FE7135976D6B1CD2763A78A /* QQCorner.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

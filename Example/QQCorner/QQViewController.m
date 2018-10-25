@@ -7,9 +7,7 @@
 //
 
 #import "QQViewController.h"
-#import "UIImage+QQCorner.h"
-#import "UIView+QQCorner.h"
-#import "CALayer+QQCorner.h"
+#import "QQCorner.h"
 
 @interface QQViewController ()
 
@@ -31,25 +29,86 @@
 
 - (void)configureSubviews {
     CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     CGFloat labH = 30;
     CGFloat padding = 20;
+    
     //UIImage
     UILabel *imgLab = [self createLabelWithFrame:CGRectMake(0, 0, screenW, labH) title:@"UIImage"];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((screenW - 250) * 0.5, CGRectGetMaxY(imgLab.frame) + padding, 250, 350)];
     [self.scrollView addSubview:imgView];
-    imgView.image = [[UIImage imageNamed:@"bookface.jpg"] imageByAddingCornerRadius:QQRadiusMake(70, 30, 40, 50)];
-    //UILabel
-    UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel"];
-    UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(lab.frame) + padding, screenW - 200, 40)];
+    
+    imgView.image = [[UIImage imageNamed:@"bookface.jpg"] imageByAddingCornerRadius:QQRadiusMake(20, 30, 40, 50)];
+    
+    //UILabel/UIView/CALayer
+    UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel/UIView/CALayer"];
+    UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 40)];
+    
     [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMake(20, 20, 20, 20) fillColor:[UIColor cyanColor]]];
-    testLab.font = [UIFont systemFontOfSize:20];
+    
+    testLab.font = [UIFont systemFontOfSize:14];
     testLab.textColor = [UIColor blackColor];
     testLab.textAlignment = NSTextAlignmentCenter;
-    testLab.text = @"QQCorner";
+    testLab.text = @"带中文没事，纯英文显示不出来";
     [self.scrollView addSubview:testLab];
     
-    self.scrollView.contentSize = CGSizeMake(screenW, CGRectGetMaxY(testLab.frame) + padding);
+    //UIButton.SystemType
+    UILabel *btnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(testLab.frame) + padding, screenW, labH) title:@"UIButton.SystemType"];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(100, CGRectGetMaxY(btnLab.frame) + padding, screenW - 200, 30);
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
+    
+    [btn setTitle:@"纯色带圆角按钮" forState:UIControlStateNormal];
+    [self.scrollView addSubview:btn];
+    
+    UIButton *graBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    graBtn.frame = CGRectMake(100, CGRectGetMaxY(btn.frame) + padding, screenW - 200, 30);
+    graBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [graBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    QQGradualChangingColor *graColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor greenColor] to:[UIColor yellowColor] type:QQGradualChangeTypeUpLeftToDownRight];
+    [graBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:graColor size:graBtn.bounds.size cornerRadius:QQRadiusMake(5, 5, 15, 15)] forState:UIControlStateNormal];
+    
+    [graBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
+    [self.scrollView addSubview:graBtn];
+    
+    UIButton *borderBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    borderBtn.frame = CGRectMake(100, CGRectGetMaxY(graBtn.frame) + padding, screenW - 200, 30);
+    borderBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [borderBtn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
+    
+    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMake(15, 15, 15, 15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
+    [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
+    
+    [borderBtn setTitle:@"带边框圆角的按钮" forState:UIControlStateNormal];
+    [self.scrollView addSubview:borderBtn];
+    
+    //UIButton.CustomType
+    UILabel *customBtnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(borderBtn.frame) + padding, screenW, labH) title:@"UIButton.CustomType"];
+    UIButton *customBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    customBtn.frame = CGRectMake(100, CGRectGetMaxY(customBtnLab.frame) + padding, screenW - 200, 30);
+    customBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [customBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [customBtn setBackgroundImage:[UIImage imageWithColor:[UIColor magentaColor] size:customBtn.bounds.size cornerRadius:QQRadiusMake(15, 15, 15, 15)] forState:UIControlStateNormal];
+    
+    [customBtn setTitle:@"纯色带圆角按钮" forState:UIControlStateNormal];
+    [self.scrollView addSubview:customBtn];
+    
+    UIButton *customGraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    customGraBtn.frame = CGRectMake(100, CGRectGetMaxY(customBtn.frame) + padding, screenW - 200, 30);
+    customGraBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [customGraBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    QQGradualChangingColor *customGraColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor purpleColor] to:[UIColor brownColor] type:QQGradualChangeTypeUpLeftToDownRight];
+    [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:customGraColor size:customGraBtn.bounds.size cornerRadius:QQRadiusMake(15, 15, 15, 15)] forState:UIControlStateNormal];
+    
+    [customGraBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
+    [self.scrollView addSubview:customGraBtn];
+    
+    self.scrollView.contentSize = CGSizeMake(screenW, CGRectGetMaxY(customGraBtn.frame) + padding);
 }
 
 - (UILabel *)createLabelWithFrame:(CGRect)frame title:(NSString *)title {

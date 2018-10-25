@@ -11,6 +11,7 @@
 #endif
 
 #import "CALayer+QQCorner.h"
+#import "QQCorner.h"
 #import "QQCornerModel.h"
 #import "UIImage+QQCorner.h"
 #import "UIView+QQCorner.h"
