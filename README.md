@@ -2,12 +2,12 @@
 
 [![Version](https://img.shields.io/cocoapods/v/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 [![Platform](https://img.shields.io/cocoapods/p/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
-[iOS开发 高性能添加圆角(支持4个不同半径)](https://blog.csdn.net/qinqi376990311/article/details/83378955)
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 将整个仓库clone下来，在 Example 文件夹的目录下执行 `pod install` ，然后运行Example
+[iOS开发 高性能添加圆角(支持4个不同半径)](https://blog.csdn.net/qinqi376990311/article/details/83378955)
 
 ## Requirements
 
