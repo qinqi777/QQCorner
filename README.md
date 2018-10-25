@@ -28,6 +28,8 @@ pod 'QQCorner'
 
 ## Useage
 
+### Objective-C Version
+
 ```Objective-C
 #import "QQCorner.h"
 
@@ -38,28 +40,65 @@ pod 'QQCorner'
     //UIView and its subclasses
     //UIView 及其子类
     //FIXME: 在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
-    UILabel *testLab;
+    UILabel *testLab = [[UILabel alloc] init];
     [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
   
     //UIButton set image/backgroundImage
     //给UIButton设置Image或backgroundImage
-    UIButton *btn;
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
   
     //Gradual changing color
     //简单的渐变色，支持两个颜色4种渐变方式
-    UIButton *graBtn;
+    UIButton *graBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     QQGradualChangingColor *graColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor greenColor] to:[UIColor yellowColor] type:QQGradualChangeTypeUpLeftToDownRight];
     [graBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:graColor size:graBtn.bounds.size cornerRadius:QQRadiusMake(5, 5, 15, 15)] forState:UIControlStateNormal];
     
     //Border corner
     //带边框的圆角
-    UIButton *borderBtn;
+    UIButton *borderBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
     [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
     
 }
 
+```
+### Swift Version
+
+```Swift
+import QQCorner
+
+class SomeClass {
+
+func someFunction() {
+        //UIImage
+        let image = UIImage(named: "bookface.jpg")?.addingCornerRadius(QQRadius(upLeft: 20, upRight: 30, downLeft: 40, downRight: 50))
+        
+        //UIView and its subclasses
+        //UIView 及其子类
+        //FIXME: 在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
+        let testLab = UILabel();
+        testLab.addCornerRadius(QQCorner(radius: QQRadiusMakeSame(20), fill: UIColor.cyan))
+        
+        //UIButton set image/backgroundImage
+        //给UIButton设置Image或backgroundImage
+        let btn = UIButton(type: .system);
+        btn.setBackgroundImage(UIImage(color: UIColor.blue, size: btn.bounds.size, cornerRadius: QQRadius(upLeft: 15, upRight: 15, downLeft: 5, downRight: 5)), for: .normal)
+        
+        //Gradual changing color
+        //简单的渐变色，支持两个颜色4种渐变方式
+        let graBtn = UIButton(type: .system);
+        let graColor = QQGradualChangingColor(from: UIColor.green, to: UIColor.yellow, type: .upLeftToDownRight)
+        graBtn.setBackgroundImage(UIImage(gradualChangingColor: graColor, size: graBtn.bounds.size, cornerRadius: QQRadius(upLeft: 5, upRight: 5, downLeft: 15, downRight: 15)), for: .normal)
+        
+        //Border corner
+        //带边框的圆角
+        let borderBtn = UIButton(type: .system);
+        let corner = QQCorner(radius: QQRadiusMakeSame(15), fill: nil, borderColor: UIColor.magenta, borderWidth: 2)
+        borderBtn.setBackgroundImage(UIImage(qqCorner: corner, size: borderBtn.bounds.size), for: .normal)
+    }
+
+}
 ```
 
 ## Discussion
