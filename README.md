@@ -3,6 +3,9 @@
 [![Version](https://img.shields.io/cocoapods/v/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 [![Platform](https://img.shields.io/cocoapods/p/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 
+支持给 ```UIView```及其子类添加圆角，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
+生成简单渐变色的图片、纯色图片、截屏功能(将layer渲染到UIImage并可以添加圆角)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -69,10 +72,6 @@ pod 'QQCorner'
 <font color=red>好消息！好消息！WWCD 2018 告诉我们，有 ```UIGraphicsImageRenderer```这么一个类，它比 ```UIGraphicsBeginImageContextWithOptions()```这个方法要降低75%的内存消耗！</font>
 
 **坏消息是什么？它只支持 iOS 10 以上的版本。**
-
-我写了几个 Categories ，支持给 ```UIView```及其子类添加圆角，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
-另外还扩展了：生成简单渐变色的图片、纯色图片、截屏功能(将layer渲染到UIImage并可以添加圆角)
-支持 Cocoapods 安装，上地址：[QQCorner](https://github.com/qinqi777/QQCorner)
 
 那么 iOS 10 之前，我们只能用 ```CGBitmapContextCreate() ```来创建位图的上下文。其缺点是坐标系的 y 轴是反的，可能不是很习惯，而且切记要 release
 我看 SDWebImage 也是这么做的。
