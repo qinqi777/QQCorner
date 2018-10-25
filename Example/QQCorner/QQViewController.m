@@ -104,7 +104,6 @@
     
     QQGradualChangingColor *customGraColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor purpleColor] to:[UIColor brownColor] type:QQGradualChangeTypeUpLeftToDownRight];
     [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:customGraColor size:customGraBtn.bounds.size cornerRadius:QQRadiusMake(15, 15, 15, 15)] forState:UIControlStateNormal];
-    
     [customGraBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:customGraBtn];
     
