@@ -43,11 +43,13 @@ pod 'QQCorner'
   
     //Gradual changing color
     //简单的渐变色，支持两个颜色4种渐变方式
+    UIButton *graBtn;
     QQGradualChangingColor *graColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor greenColor] to:[UIColor yellowColor] type:QQGradualChangeTypeUpLeftToDownRight];
     [graBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:graColor size:graBtn.bounds.size cornerRadius:QQRadiusMake(5, 5, 15, 15)] forState:UIControlStateNormal];
     
     //Border corner
     //带边框的圆角
+    UIButton *borderBtn;
     QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMake(15, 15, 15, 15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
     [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
     
