@@ -109,6 +109,7 @@ class SomeClass {
  - iOS 9 之后，```UIImageView```设置png格式的图片时，并且没有 ```backgroundColor```时，设置其 ```layer```的 ```cornerRadius```不会触发离屏渲染。
  
 ---
+
 <font color=red>好消息！好消息！WWCD 2018 告诉我们，有 ```UIGraphicsImageRenderer```这么一个类，它比 ```UIGraphicsBeginImageContextWithOptions()```这个方法要降低75%的内存消耗！</font>
 
 **坏消息是什么？它只支持 iOS 10 以上的版本。**
@@ -117,6 +118,7 @@ class SomeClass {
 我看 SDWebImage 也是这么做的。
 
 ---
+
 #### 存在的问题：
 我发现用 ```CGBitmapContextCreate()```创建的上下文，里面的 path 不能被裁剪，否则的话边框是绘制不出来的。
 这个 path 是 ```UIBezierPath```，```UIBezierPath```的 ```clip```方法不起作用，此时可以 ```fill```和 ```stroke```
