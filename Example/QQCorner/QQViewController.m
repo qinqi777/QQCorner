@@ -43,7 +43,7 @@
     UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel/UIView/CALayer"];
     UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 40)];
     
-    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMake(20, 20, 20, 20) fillColor:[UIColor cyanColor]]];
+    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
     
     testLab.font = [UIFont systemFontOfSize:14];
     testLab.textColor = [UIColor blackColor];
@@ -79,7 +79,7 @@
     borderBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [borderBtn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
     
-    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMake(15, 15, 15, 15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
+    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
     [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
     
     [borderBtn setTitle:@"带边框圆角的按钮" forState:UIControlStateNormal];
@@ -92,7 +92,7 @@
     customBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [customBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [customBtn setBackgroundImage:[UIImage imageWithColor:[UIColor magentaColor] size:customBtn.bounds.size cornerRadius:QQRadiusMake(15, 15, 15, 15)] forState:UIControlStateNormal];
+    [customBtn setBackgroundImage:[UIImage imageWithColor:[UIColor magentaColor] size:customBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
     
     [customBtn setTitle:@"纯色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:customBtn];
@@ -103,7 +103,7 @@
     [customGraBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     QQGradualChangingColor *customGraColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor purpleColor] to:[UIColor brownColor] type:QQGradualChangeTypeUpLeftToDownRight];
-    [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:customGraColor size:customGraBtn.bounds.size cornerRadius:QQRadiusMake(15, 15, 15, 15)] forState:UIControlStateNormal];
+    [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:customGraColor size:customGraBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
     [customGraBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:customGraBtn];
     
