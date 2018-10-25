@@ -28,7 +28,7 @@ pod 'QQCorner'
 
 ## Useage
 
-### Objective-C Version
+#### Objective-C Version
 
 ```Objective-C
 #import "QQCorner.h"
@@ -63,14 +63,14 @@ pod 'QQCorner'
 }
 
 ```
-### Swift Version
+#### Swift Version
 
 ```Swift
 import QQCorner
 
 class SomeClass {
 
-func someFunction() {
+    func someFunction() {
         //UIImage
         let image = UIImage(named: "bookface.jpg")?.addingCornerRadius(QQRadius(upLeft: 20, upRight: 30, downLeft: 40, downRight: 50))
         
