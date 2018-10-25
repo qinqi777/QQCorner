@@ -6,13 +6,14 @@
 支持给 ```UIView```及其子类添加圆角，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
 生成简单渐变色的图片、纯色图片、截屏功能(将layer渲染到UIImage并可以添加圆角)
 
+我的博客：
+[iOS开发 高性能添加圆角(支持4个不同半径)](https://blog.csdn.net/qinqi376990311/article/details/83378955)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 将整个仓库clone下来，在 Example 文件夹的目录下执行 `pod install` ，然后运行Example
-
-[iOS开发 高性能添加圆角(支持4个不同半径)](https://blog.csdn.net/qinqi376990311/article/details/83378955)
 
 ## Installation
 
