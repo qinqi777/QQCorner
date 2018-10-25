@@ -14,6 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 QQCorner is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
+QQCorner 支持通过 CocoaPods 安装，简单地添加下面这一行到你的 Podfile 中
 
 ```ruby
 pod 'QQCorner'
