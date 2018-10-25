@@ -31,6 +31,15 @@ NS_INLINE QQRadius QQRadiusMake(CGFloat upLeft, CGFloat upRight, CGFloat downLef
     return radius;
 }
 
+NS_INLINE QQRadius QQRadiusMakeSame(CGFloat radius) {
+    QQRadius result;
+    result.upLeft = radius;
+    result.upRight = radius;
+    result.downLeft = radius;
+    result.downRight = radius;
+    return result;
+}
+
 
 typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
     QQGradualChangeTypeUpLeftToDownRight = 0,
