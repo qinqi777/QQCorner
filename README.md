@@ -37,7 +37,7 @@ pod 'QQCorner'
     //UIView 及其子类
     //FIXME: 在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
     UILabel *testLab;
-    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMake(20, 20, 20, 20) fillColor:[UIColor cyanColor]]];
+    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
   
     //UIButton set image/backgroundImage
     //给UIButton设置Image或backgroundImage
@@ -53,7 +53,7 @@ pod 'QQCorner'
     //Border corner
     //带边框的圆角
     UIButton *borderBtn;
-    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMake(15, 15, 15, 15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
+    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
     [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
     
 }
