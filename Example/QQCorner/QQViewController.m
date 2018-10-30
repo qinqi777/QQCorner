@@ -7,7 +7,7 @@
 //
 
 #import "QQViewController.h"
-#import "QQCorner.h"
+#import <QQCorner/QQCorner.h>
 
 @interface QQViewController ()
 
