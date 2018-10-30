@@ -31,7 +31,7 @@ pod 'QQCorner'
 #### Objective-C Version
 
 ```Objective-C
-#import "QQCorner.h"
+#import <QQCorner/QQCorner.h>
 
 - (void)someMethod {
     //UIImage
