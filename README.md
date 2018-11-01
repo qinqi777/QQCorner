@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 [![Platform](https://img.shields.io/cocoapods/p/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 
-支持给 ```UIView```及其子类添加圆角，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
+支持给 ```UIView```及其子类添加圆角(之后可以修改)，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
 生成简单渐变色的图片、纯色图片、截屏功能(将layer渲染到UIImage并可以添加圆角)
 
 我的博客：
