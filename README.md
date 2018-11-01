@@ -9,6 +9,9 @@
 我的博客：
 [iOS开发 高性能添加圆角(支持4个不同半径)](https://blog.csdn.net/qinqi376990311/article/details/83378955)
 
+![演示1](https://img-blog.csdnimg.cn/2018110116121746.png)
+![演示2](https://img-blog.csdnimg.cn/20181101161253134.png)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
