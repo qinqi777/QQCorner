@@ -8,8 +8,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 @class QQCorner;
+@class QQShapeLayer;
 
 @interface CALayer (QQCorner)
+
+@property (nonatomic, weak) QQShapeLayer *qq_layer;
 
 /**
  Add corner to a CALayer instance

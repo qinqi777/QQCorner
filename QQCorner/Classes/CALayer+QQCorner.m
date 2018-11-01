@@ -8,6 +8,7 @@
 
 #import "CALayer+QQCorner.h"
 #import "QQCornerModel.h"
+#import <objc/runtime.h>
 
 @interface QQShapeLayer : CAShapeLayer
 
@@ -18,6 +19,16 @@
 @end
 
 @implementation CALayer (QQCorner)
+
+static const void *qq_layer_key;
+
+- (QQShapeLayer *)qq_layer {
+    return objc_getAssociatedObject(self, &qq_layer_key);
+}
+
+- (void)setQq_layer:(QQShapeLayer *)qq_layer {
+    objc_setAssociatedObject(self, &qq_layer_key, qq_layer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 - (void)addCornerRadius:(QQCorner *)corner {
     CGColorRef fill = corner.fillColor.CGColor;
@@ -46,11 +57,8 @@
     if (corner.borderWidth <= 0) {
         corner.borderWidth = 1;
     }
-    [self.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isMemberOfClass:[QQShapeLayer class]]) {
-            [obj removeFromSuperlayer];
-        }
-    }];
+    //移除之前的
+    [self.qq_layer removeFromSuperlayer];
     QQShapeLayer *cornerLayer = [QQShapeLayer layer];
     cornerLayer.frame = self.bounds;
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -75,6 +83,7 @@
     [path addClip];
     cornerLayer.path = path.CGPath;
     [self insertSublayer:cornerLayer atIndex:0];
+    self.qq_layer = cornerLayer;
 }
 
 @end
