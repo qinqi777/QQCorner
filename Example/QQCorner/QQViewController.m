@@ -43,9 +43,15 @@
     UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel/UIView/CALayer"];
     UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 40)];
     
-    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
-    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
-    [testLab addCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(10) fillColor:[UIColor cyanColor]]];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:[UIColor yellowColor]]];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
+    });
     
     testLab.font = [UIFont systemFontOfSize:14];
     testLab.textColor = [UIColor blackColor];
