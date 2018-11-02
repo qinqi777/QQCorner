@@ -8,11 +8,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 @class QQCorner;
-@class QQShapeLayer;
 
 @interface CALayer (QQCorner)
 
-//@property (nonatomic, weak) QQShapeLayer *qq_layer;
+@property (nonatomic, strong) QQCorner *qq_corner;
 
 /**
  Add corner to a CALayer instance
@@ -22,6 +21,7 @@
  @warning If you pass nil or clearColor to both 'fillColor' and 'borderColor' params in corner, this method will do nothing.
  如果在corner对象中，fillColor 和 borderColor 都被设置为 nil 或者 clearColor，这个方法什么都不会做。
  */
-- (void)updateCornerRadius:(QQCorner *)corner;
+- (void)updateCornerRadius:(void(^)(QQCorner *corner))handler;
+
 
 @end

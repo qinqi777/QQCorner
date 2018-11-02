@@ -42,15 +42,24 @@
     //UILabel/UIView/CALayer
     UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel/UIView/CALayer"];
     UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 40)];
-    
+    testLab.backgroundColor = [UIColor cyanColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(10) fillColor:[UIColor cyanColor]]];
+        [testLab updateCornerRadius:^(QQCorner *corner) {
+            corner.radius = QQRadiusMakeSame(10);
+            corner.borderColor = [UIColor blueColor];
+        }];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:[UIColor yellowColor]]];
+        [testLab updateCornerRadius:^(QQCorner *corner) {
+            corner.radius = QQRadiusMakeSame(15);
+            corner.fillColor = [UIColor greenColor];
+        }];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:[QQCorner cornerWithRadius:QQRadiusMakeSame(20) fillColor:[UIColor cyanColor]]];
+        [testLab updateCornerRadius:^(QQCorner *corner) {
+            corner.radius = QQRadiusMakeSame(20);
+            corner.borderColor = nil;
+        }];
     });
     
     testLab.font = [UIFont systemFontOfSize:14];
@@ -76,8 +85,11 @@
     graBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [graBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    QQGradualChangingColor *graColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor greenColor] to:[UIColor yellowColor] type:QQGradualChangeTypeUpLeftToDownRight];
-    [graBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:graColor size:graBtn.bounds.size cornerRadius:QQRadiusMake(5, 5, 15, 15)] forState:UIControlStateNormal];
+    [graBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:^(QQGradualChangingColor *graColor) {
+        graColor.fromColor = [UIColor greenColor];
+        graColor.toColor = [UIColor yellowColor];
+        graColor.type = QQGradualChangeTypeUpLeftToDownRight;
+    } size:graBtn.bounds.size cornerRadius:QQRadiusMake(5, 5, 15, 15)] forState:UIControlStateNormal];
     
     [graBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:graBtn];
@@ -87,8 +99,11 @@
     borderBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [borderBtn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
     
-    QQCorner *corner = [QQCorner cornerWithRadius:QQRadiusMakeSame(15) fillColor:nil borderColor:[UIColor magentaColor] borderWidth:2];
-    [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:corner size:borderBtn.bounds.size] forState:UIControlStateNormal];
+    [borderBtn setBackgroundImage:[UIImage imageWithQQCorner:^(QQCorner *corner) {
+        corner.radius = QQRadiusMakeSame(15);
+        corner.borderColor = [UIColor magentaColor];
+        corner.borderWidth = 2;
+    } size:borderBtn.bounds.size] forState:UIControlStateNormal];
     
     [borderBtn setTitle:@"带边框圆角的按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:borderBtn];
@@ -110,8 +125,12 @@
     customGraBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [customGraBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    QQGradualChangingColor *customGraColor = [QQGradualChangingColor gradualChangingColorFrom:[UIColor purpleColor] to:[UIColor brownColor] type:QQGradualChangeTypeUpLeftToDownRight];
-    [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:customGraColor size:customGraBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
+    [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:^(QQGradualChangingColor *graColor) {
+        graColor.fromColor = [UIColor purpleColor];
+        graColor.toColor = [UIColor brownColor];
+        graColor.type = QQGradualChangeTypeUpLeftToDownRight;
+    } size:customGraBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
+    
     [customGraBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:customGraBtn];
     

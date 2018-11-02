@@ -64,7 +64,11 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
     return image;
 }
 
-+ (UIImage *)imageWithGradualChangingColor:(QQGradualChangingColor *)graColor size:(CGSize)size cornerRadius:(QQRadius)radius {
++ (UIImage *)imageWithGradualChangingColor:(void (^)(QQGradualChangingColor *))handler size:(CGSize)size cornerRadius:(QQRadius)radius {
+    QQGradualChangingColor *graColor = [[QQGradualChangingColor alloc] init];
+    if (handler) {
+        handler(graColor);
+    }
     CAGradientLayer *graLayer = [CAGradientLayer layer];
     graLayer.frame = (CGRect){CGPointZero, size};
     CGFloat startX = 0, startY = 0, endX = 0, endY = 0;
@@ -105,7 +109,11 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
     return [self imageWithLayer:graLayer cornerRadius:radius];
 }
 
-+ (UIImage *)imageWithQQCorner:(QQCorner *)corner size:(CGSize)size {
++ (UIImage *)imageWithQQCorner:(void (^)(QQCorner *))handler size:(CGSize)size {
+    QQCorner *corner = [[QQCorner alloc] init];
+    if (handler) {
+        handler(corner);
+    }
     if (!corner.fillColor) {
         corner.fillColor = [UIColor clearColor];
     }

@@ -55,11 +55,6 @@ typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
 @property (nonatomic, strong) UIColor *toColor;
 @property (nonatomic, assign) QQGradualChangeType type;
 
-- (instancetype)initWithColorFrom:(UIColor *)from to:(UIColor *)to type:(QQGradualChangeType)type;
-
-+ (instancetype)gradualChangingColorFrom:(UIColor *)from to:(UIColor *)to;
-+ (instancetype)gradualChangingColorFrom:(UIColor *)from to:(UIColor *)to type:(QQGradualChangeType)type;
-
 @end
 
 
@@ -73,44 +68,5 @@ typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
 @property (nonatomic, strong) UIColor *borderColor;
 /**The lineWidth of the border. 边框宽度*/
 @property (nonatomic, assign) CGFloat borderWidth;
-
-/**
- Create a QQCorner instance.
- 创建一个 QQCorner 对象
- @param radius The radiuses of 4 corners.
- 4个圆角的半径
- @param fillColor The color that will fill the layer/view, same as backgroundColor.
- 将要填充 layer/view 的颜色，类似背景色
- @param borderColor The color of border.
- 边框颜色
- @param borderWidth The lineWidth of border. Defaults to 1.
- 边框宽度，默认为1
- 
- */
-- (instancetype)initWithRadius:(QQRadius)radius fillColor:(UIColor *)fillColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
-
-/**
- Create a QQCorner instance.
- 创建一个 QQCorner 对象
- @param radius The radiuses of 4 corners.
- 4个圆角的半径
- @param fillColor The color that will fill the layer/view, same as backgroundColor.
- 将要填充 layer/view 的颜色，类似背景色
- */
-+ (instancetype)cornerWithRadius:(QQRadius)radius fillColor:(UIColor *)fillColor;
-
-/**
- Create a QQCorner instance.
- 创建一个 QQCorner 对象
- @param radius The radiuses of 4 corners.
- 4个圆角的半径
- @param fillColor The color that will fill the layer/view, same as backgroundColor.
- 将要填充 layer/view 的颜色，类似背景色
- @param borderColor The color of border.
- 边框颜色
- @param borderWidth The lineWidth of border. Defaults to 1.
- 边框宽度，默认为1
- */
-+ (instancetype)cornerWithRadius:(QQRadius)radius fillColor:(UIColor *)fillColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 
 @end

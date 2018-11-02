@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'QQCorner_Example' do
-  pod 'QQCorner', :path => '../'
+    pod 'QQCorner', :path => '../'
 
   target 'QQCorner_Tests' do
     inherit! :search_paths
