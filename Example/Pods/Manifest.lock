@@ -1,5 +1,5 @@
 PODS:
-  - QQCorner (0.1.2)
+  - QQCorner (1.0.1)
 
 DEPENDENCIES:
   - QQCorner (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  QQCorner: 5cd464cf88b005017036f0e53f8af93a2568b2bd
+  QQCorner: a2a41ae8a32a408335a04e21beda9fc03fa669ec
 
-PODFILE CHECKSUM: 77189e01894bae960260a4df0ddee08a8c5c8811
+PODFILE CHECKSUM: ef58861690f07284ea5f939ed52a5589bb1f1c76
 
 COCOAPODS: 1.5.3

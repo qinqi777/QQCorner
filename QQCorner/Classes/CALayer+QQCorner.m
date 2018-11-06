@@ -10,44 +10,55 @@
 #import "QQCornerModel.h"
 #import <objc/runtime.h>
 
-@interface QQShapeLayer : CAShapeLayer
-
-@end
-
-@implementation QQShapeLayer
-
-@end
-
 @implementation CALayer (QQCorner)
 
-static const void *qq_layer_key;
+static const char *qq_layer_key = "qq_layer_key";
+static const char *qq_corner_key = "qq_corner_key";
 
-- (QQShapeLayer *)qq_layer {
-    QQShapeLayer *layer = objc_getAssociatedObject(self, &qq_layer_key);
+- (CAShapeLayer *)qq_layer {
+    CAShapeLayer *layer = objc_getAssociatedObject(self, &qq_layer_key);
     if (!layer) {
-        layer = [QQShapeLayer layer];
+        layer = [CAShapeLayer layer];
+        layer.frame = self.bounds;
         [self insertSublayer:layer atIndex:0];
         self.qq_layer = layer;
     }
     return layer;
 }
 
-- (void)setQq_layer:(QQShapeLayer *)qq_layer {
+- (void)setQq_layer:(CAShapeLayer *)qq_layer {
     objc_setAssociatedObject(self, &qq_layer_key, qq_layer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)updateCornerRadius:(QQCorner *)corner {
-    CGColorRef fill = corner.fillColor.CGColor;
-    if (CGColorEqualToColor(fill, [UIColor clearColor].CGColor)) {
-        if (CGColorEqualToColor(self.backgroundColor, [UIColor clearColor].CGColor)) {
-            if (!corner.borderColor || CGColorEqualToColor(corner.borderColor.CGColor, [UIColor clearColor].CGColor)) {
+- (QQCorner *)qq_corner {
+    QQCorner *corner = objc_getAssociatedObject(self, &qq_corner_key);
+    if (!corner) {
+        corner = [[QQCorner alloc] init];
+        self.qq_corner = corner;
+    }
+    return corner;
+}
+
+- (void)setQq_corner:(QQCorner *)qq_corner {
+    objc_setAssociatedObject(self, &qq_corner_key, qq_corner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)updateCornerRadius:(void (^)(QQCorner *))handler {
+    if (handler) {
+        handler(self.qq_corner);
+    }
+    CGColorRef fill = self.qq_corner.fillColor.CGColor;
+    if (!fill || CGColorEqualToColor(fill, [UIColor clearColor].CGColor)) {
+        if (!self.backgroundColor || CGColorEqualToColor(self.backgroundColor, [UIColor clearColor].CGColor)) {
+            if (!self.qq_corner.borderColor || CGColorEqualToColor(self.qq_corner.borderColor.CGColor, [UIColor clearColor].CGColor)) {
                 return;
             }
         }
         fill = self.backgroundColor;
         self.backgroundColor = [UIColor clearColor].CGColor;
     }
-    QQRadius radius = corner.radius;
+    
+    QQRadius radius = self.qq_corner.radius;
     if (radius.upLeft < 0) {
         radius.upLeft = 0;
     }
@@ -60,8 +71,8 @@ static const void *qq_layer_key;
     if (radius.downRight < 0) {
         radius.downRight = 0;
     }
-    if (corner.borderWidth <= 0) {
-        corner.borderWidth = 1;
+    if (self.qq_corner.borderWidth <= 0) {
+        self.qq_corner.borderWidth = 1;
     }
     UIBezierPath *path = [UIBezierPath bezierPath];
     CGFloat height = self.bounds.size.height;
@@ -81,10 +92,9 @@ static const void *qq_layer_key;
     [path closePath];
     [path addClip];
     
-    self.qq_layer.frame = self.bounds;
     self.qq_layer.fillColor = fill;
-    self.qq_layer.strokeColor = corner.borderColor.CGColor;
-    self.qq_layer.lineWidth = corner.borderWidth;
+    self.qq_layer.strokeColor = self.qq_corner.borderColor.CGColor;
+    self.qq_layer.lineWidth = self.qq_corner.borderWidth;
     self.qq_layer.path = path.CGPath;
 }
 

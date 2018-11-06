@@ -57,7 +57,7 @@
  @param radius The radiuses of 4 corners. If you pass QQRadiusZero, the final image will not add corner
  4个圆角的半径，如果传入QQRadiusZero，最终的图片将不添加圆角
  */
-+ (UIImage *)imageWithGradualChangingColor:(QQGradualChangingColor *)graColor size:(CGSize)size cornerRadius:(QQRadius)radius;
++ (UIImage *)imageWithGradualChangingColor:(void(^)(QQGradualChangingColor *graColor))handler size:(CGSize)size cornerRadius:(QQRadius)radius;
 
 /**
  Create a UIImage with border and corner. Always uses in UIButton
@@ -67,6 +67,6 @@
  @param size The size of the image.
  图片的尺寸
  */
-+ (UIImage *)imageWithQQCorner:(QQCorner *)corner size:(CGSize)size;
++ (UIImage *)imageWithQQCorner:(void(^)(QQCorner *corner))handler size:(CGSize)size;
 
 @end

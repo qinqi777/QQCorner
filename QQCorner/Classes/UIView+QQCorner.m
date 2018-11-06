@@ -12,17 +12,20 @@
 
 @implementation UIView (QQCorner)
 
-- (void)updateCornerRadius:(QQCorner *)corner {
-    if (CGColorEqualToColor(corner.fillColor.CGColor, [UIColor clearColor].CGColor)) {
+- (void)updateCornerRadius:(void (^)(QQCorner *))handler {
+    if (handler) {
+        handler(self.layer.qq_corner);
+    }
+    if (!self.layer.qq_corner.fillColor || CGColorEqualToColor(self.layer.qq_corner.fillColor.CGColor, [UIColor clearColor].CGColor)) {
         if (CGColorEqualToColor(self.backgroundColor.CGColor, [UIColor clearColor].CGColor)) {
-            if (!corner.borderColor || CGColorEqualToColor(corner.borderColor.CGColor, [UIColor clearColor].CGColor)) {
+            if (!self.layer.qq_corner.borderColor || CGColorEqualToColor(self.layer.qq_corner.borderColor.CGColor, [UIColor clearColor].CGColor)) {
                 return;
             }
         }
-        corner.fillColor = self.backgroundColor;
+        self.layer.qq_corner.fillColor = self.backgroundColor;
         self.backgroundColor = [UIColor clearColor];
     }
-    [self.layer updateCornerRadius:corner];
+    [self.layer updateCornerRadius:handler];
 }
 
 @end
