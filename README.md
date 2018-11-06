@@ -143,9 +143,13 @@ class SomeClass {
 
 #### 存在的问题：
 我发现用 ```CGBitmapContextCreate()```创建的上下文，里面的 path 不能被裁剪，否则的话边框是绘制不出来的。
-这个 path 是 ```UIBezierPath```，```UIBezierPath```的 ```clip```方法不起作用，此时可以 ```fill```和 ```stroke```
+
+这个 path 是 ```UIBezierPath```，但是```UIBezierPath```的 ```clip```方法不起作用，不过此时可以 ```fill```和 ```stroke```
+
 如果调用 ```CGContextClip()```则整个path都会被裁掉，即不能```fill```和```stroke```，但是它是有效的。
+
 用 ```UIGraphicsBeginImageContextWithOptions()```或者 ```UIGraphicsImageRenderer```里面的上下文是没有问题的，```UIBezierPath```的 ```clip```方法有效！
+
 所以这个问题搞清楚之前，我在 ```+ (UIImage *)imageWithQQCorner:(QQCorner *)corner size:(CGSize)size;```中，iOS 10 之前版本，依然使用了 ```UIGraphicsBeginImageContextWithOptions()```这个方法来创建上下文。
 
 ## Author
