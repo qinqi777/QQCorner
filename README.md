@@ -138,7 +138,7 @@ class SomeClass {
 
 **坏消息是什么？它只支持 iOS 10 以上的版本。**
 
-那么 iOS 10 之前，我们只能用 ```CGBitmapContextCreate() ```来创建位图的上下文。其缺点是坐标系的 y 轴是反的，可能不是很习惯，而且切记要 release
+那么 iOS 10 之前，我们只能用 ```CGBitmapContextCreate() ```来创建位图的上下文。当然它也没法解决内存会暴涨的问题，我们在使用过程中，应该尽量避免分辨率过大的图片。
 我看 SDWebImage 也是这么做的。
 
 ---
