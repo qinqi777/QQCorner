@@ -1,6 +1,8 @@
 # QQCorner
 
+[![CI Status](https://img.shields.io/travis/qinqi777/QQTabBarController.svg?style=flat)](https://travis-ci.org/qinqi777/QQCorner)
 [![Version](https://img.shields.io/cocoapods/v/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
+[![License](https://img.shields.io/cocoapods/l/QQTabBarController.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 [![Platform](https://img.shields.io/cocoapods/p/QQCorner.svg?style=flat)](https://cocoapods.org/pods/QQCorner)
 
 支持给 ```UIView```及其子类添加圆角(之后可以修改)，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
