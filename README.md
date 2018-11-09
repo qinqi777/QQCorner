@@ -45,6 +45,7 @@ pod 'QQCorner'
     //UIView and its subclasses
     //UIView 及其子类
     //FIXME: 在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
+    //如果要显示英文或数字，建议使用UIButton设置backgroundImage来实现类似的效果。
     UILabel *testLab = [[UILabel alloc] init];
     [testLab updateCornerRadius:^(QQCorner *corner) {
         corner.radius = QQRadiusMakeSame(20);
@@ -92,6 +93,7 @@ class SomeClass {
         //UIView and its subclasses
         //UIView 及其子类
         //FIXME: 在UILabel上可能有点小问题，就是text中必须有中文，纯英文的是无法正常显示的。中文是没问题的。
+        //如果要显示英文或数字，建议使用UIButton设置backgroundImage来实现类似的效果。
         let testLab = UILabel();
         label.updateCornerRadius { (corner) in
             corner?.radius = QQRadiusMakeSame(20)
