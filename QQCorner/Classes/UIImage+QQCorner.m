@@ -46,24 +46,6 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
     return path;
 }
 
-static CGContextRef qq_getBitmapContext(CGSize imgSize) {
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGFloat scale = [UIScreen mainScreen].scale;
-    CGContextRef context = CGBitmapContextCreate(NULL, imgSize.width * scale, imgSize.height * scale, 8, 4 * imgSize.width * scale, colorSpace, kCGImageAlphaPremultipliedFirst);
-    CGContextScaleCTM(context, scale, scale);
-    CGColorSpaceRelease(colorSpace);
-    return context;
-}
-
-static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
-    CGImageRef imageMasked = CGBitmapContextCreateImage(context);
-    UIImage *image = [UIImage imageWithCGImage:imageMasked];
-    //Don't forget to release   别忘了释放~
-    CGImageRelease(imageMasked);
-    CGContextRelease(context);
-    return image;
-}
-
 + (UIImage *)imageWithGradualChangingColor:(void (^)(QQGradualChangingColor *))handler size:(CGSize)size cornerRadius:(QQRadius)radius {
     QQGradualChangingColor *graColor = [[QQGradualChangingColor alloc] init];
     if (handler) {
@@ -129,7 +111,7 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
             CGContextDrawPath(rendererContext.CGContext, kCGPathFillStroke);
         }];
     } else {
-        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        UIGraphicsBeginImageContext(size);
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetStrokeColorWithColor(context, corner.borderColor.CGColor);
         CGContextSetFillColorWithColor(context, corner.fillColor.CGColor);
@@ -153,11 +135,14 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
             [self drawInRect:(CGRect){CGPointZero, self.size}];
         }];
     } else {
-        CGContextRef context = qq_getBitmapContext(self.size);
+        UIGraphicsBeginImageContext(self.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [path addClip];
         CGContextAddPath(context, path.CGPath);
-        CGContextClip(context);
-        CGContextDrawImage(context, (CGRect){CGPointZero, self.size}, self.CGImage);
-        return qq_getImageFromBitmapContext(context);
+        [self drawInRect:(CGRect){CGPointZero, self.size}];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image;
     }
 }
 
@@ -180,15 +165,18 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
             CGContextFillRect(rendererContext.CGContext, (CGRect){CGPointZero, size});
         }];
     } else {
-        CGContextRef context = qq_getBitmapContext(size);
+        UIGraphicsBeginImageContext(size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
+            [path addClip];
             CGContextAddPath(context, path.CGPath);
-            CGContextClip(context);
         }
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillRect(context, (CGRect){CGPointZero, size});
-        return qq_getImageFromBitmapContext(context);
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image;
     }
 }
 
@@ -204,14 +192,17 @@ static UIImage * qq_getImageFromBitmapContext(CGContextRef context) {
             [layer renderInContext:rendererContext.CGContext];
         }];
     } else {
-        CGContextRef context = qq_getBitmapContext(layer.bounds.size);
+        UIGraphicsBeginImageContext(layer.bounds.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
+            [path addClip];
             CGContextAddPath(context, path.CGPath);
-            CGContextClip(context);
         }
         [layer renderInContext:context];
-        return qq_getImageFromBitmapContext(context);
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image;        
     }
 }
 
