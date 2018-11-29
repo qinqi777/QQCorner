@@ -15,33 +15,14 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
     CGFloat imgW = size.width;
     CGFloat imgH = size.height;
     UIBezierPath *path = [UIBezierPath bezierPath];
-    if (@available(iOS 10.0, *)) {
-        //左下
-        [path moveToPoint:CGPointMake(radius.upLeft, 0)];
-        [path addQuadCurveToPoint:CGPointMake(0, radius.upLeft) controlPoint:CGPointZero];
-        //左上
-        [path addLineToPoint:CGPointMake(0, imgH - radius.downLeft)];
-        [path addQuadCurveToPoint:CGPointMake(radius.downLeft, imgH) controlPoint:CGPointMake(0, imgH)];
-        //右上
-        [path addLineToPoint:CGPointMake(imgW - radius.downRight, imgH)];
-        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.downRight) controlPoint:CGPointMake(imgW, imgH)];
-        //右下
-        [path addLineToPoint:CGPointMake(imgW, radius.upRight)];
-        [path addQuadCurveToPoint:CGPointMake(imgW - radius.upRight, 0) controlPoint:CGPointMake(imgW, 0)];
-    } else {
-        //左下
-        [path moveToPoint:CGPointMake(radius.downLeft, 0)];
-        [path addQuadCurveToPoint:CGPointMake(0, radius.downLeft) controlPoint:CGPointZero];
-        //左上
-        [path addLineToPoint:CGPointMake(0, imgH - radius.upLeft)];
-        [path addQuadCurveToPoint:CGPointMake(radius.upLeft, imgH) controlPoint:CGPointMake(0, imgH)];
-        //右上
-        [path addLineToPoint:CGPointMake(imgW - radius.upRight, imgH)];
-        [path addQuadCurveToPoint:CGPointMake(imgW, imgH - radius.upRight) controlPoint:CGPointMake(imgW, imgH)];
-        //右下
-        [path addLineToPoint:CGPointMake(imgW, radius.downRight)];
-        [path addQuadCurveToPoint:CGPointMake(imgW - radius.downRight, 0) controlPoint:CGPointMake(imgW, 0)];
-    }
+    //左下
+    [path addArcWithCenter:CGPointMake(radius.downLeft, imgH - radius.downLeft) radius:radius.downLeft startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    //左上
+    [path addArcWithCenter:CGPointMake(radius.upLeft, radius.upLeft) radius:radius.upLeft startAngle:M_PI endAngle:M_PI_2 * 3 clockwise:YES];
+    //右上
+    [path addArcWithCenter:CGPointMake(imgW - radius.upRight, radius.upRight) radius:radius.upRight startAngle:M_PI_2 * 3 endAngle:0 clockwise:YES];
+    //右下
+    [path addArcWithCenter:CGPointMake(imgW - radius.downRight, imgH - radius.downRight) radius:radius.downRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
     [path closePath];
     return path;
 }
@@ -165,7 +146,7 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
             CGContextFillRect(rendererContext.CGContext, (CGRect){CGPointZero, size});
         }];
     } else {
-        UIGraphicsBeginImageContext(size);
+        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = qq_pathWithCornerRadius(radius, size);

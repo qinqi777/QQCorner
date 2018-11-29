@@ -7,7 +7,8 @@
 //
 
 #import "QQViewController.h"
-#import <QQCorner/QQCorner.h>
+//#import <QQCorner/QQCorner.h>
+#import "QQCorner.h"
 
 @interface QQViewController ()
 
@@ -111,7 +112,7 @@
     //UIButton.CustomType
     UILabel *customBtnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(borderBtn.frame) + padding, screenW, labH) title:@"UIButton.CustomType"];
     UIButton *customBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    customBtn.frame = CGRectMake(100, CGRectGetMaxY(customBtnLab.frame) + padding, screenW - 200, 30);
+    customBtn.frame = CGRectMake(100, CGRectGetMaxY(customBtnLab.frame) + padding, 30, 30);
     customBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [customBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
