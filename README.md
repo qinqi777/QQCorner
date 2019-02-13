@@ -7,6 +7,7 @@
 
 支持给 ```UIView```及其子类添加圆角(之后可以修改)，或者给 ```UIImage```添加圆角。支持4个圆角半径大小不同。
 生成简单渐变色的图片、纯色图片、截屏功能(将layer渲染到UIImage并可以添加圆角)
+
 <font color=red>注意！每次给```UIView```或```CALayer```重新设置了frame或约束之后，一定要Update一次！否则会有显示问题。我之所以没有去hook -setFrame: 方法或 -layoutSubviews 方法，也是出于性能考虑，不妨我们手动去update一下了。</font>
 
 我的博客：
