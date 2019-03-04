@@ -96,7 +96,7 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetStrokeColorWithColor(context, corner.borderColor.CGColor);
         CGContextSetFillColorWithColor(context, corner.fillColor.CGColor);
-        CGContextSetLineWidth(context, 1);
+        CGContextSetLineWidth(context, corner.borderWidth);
         CGContextAddPath(context, path.CGPath);
         [path addClip];
         CGContextDrawPath(context, kCGPathFillStroke);
