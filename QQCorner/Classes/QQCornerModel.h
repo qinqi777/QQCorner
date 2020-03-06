@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 struct QQRadius {
-    CGFloat upLeft; //The radius of upLeft. 左上半径
+    CGFloat upLeft;     //The radius of upLeft.     左上半径
     CGFloat upRight;    //The radius of upRight.    右上半径
     CGFloat downLeft;   //The radius of downLeft.   左下半径
     CGFloat downRight;  //The radius of downRight.  右下半径

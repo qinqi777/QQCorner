@@ -71,12 +71,20 @@ static const char *qq_corner_key = "qq_corner_key";
     if (radius.downRight < 0) {
         radius.downRight = 0;
     }
-    if (self.qq_corner.borderWidth <= 0) {
-        self.qq_corner.borderWidth = 1;
+    if (self.qq_corner.borderWidth < 0) {
+        self.qq_corner.borderWidth = 0;
     }
+    
+    CGRect qq_frame = self.bounds;
+    qq_frame.origin.x = self.qq_corner.borderWidth * 0.5;
+    qq_frame.origin.y = self.qq_corner.borderWidth * 0.5;
+    qq_frame.size.width -= self.qq_corner.borderWidth;
+    qq_frame.size.height -= self.qq_corner.borderWidth;
+    self.qq_layer.frame = qq_frame;
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
-    CGFloat height = self.bounds.size.height;
-    CGFloat width = self.bounds.size.width;
+    CGFloat height = qq_frame.size.height;
+    CGFloat width = qq_frame.size.width;
     //左下
     [path moveToPoint:CGPointMake(radius.upLeft, 0)];
     [path addQuadCurveToPoint:CGPointMake(0, radius.upLeft) controlPoint:CGPointZero];

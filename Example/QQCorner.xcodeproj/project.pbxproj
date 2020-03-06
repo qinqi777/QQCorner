@@ -210,7 +210,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				02E5CBB71F7CEC8E04FC2B1C /* [CP] Embed Pods Frameworks */,
+				6F7511CAFEE477778244B533 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -298,13 +299,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02E5CBB71F7CEC8E04FC2B1C /* [CP] Embed Pods Frameworks */ = {
+		6F7511CAFEE477778244B533 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/QQCorner/QQCorner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -313,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3F91FC347C1485619AFA214 /* [CP] Check Pods Manifest.lock */ = {

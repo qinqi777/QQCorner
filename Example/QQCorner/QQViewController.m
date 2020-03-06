@@ -38,40 +38,37 @@
     UILabel *imgLab = [self createLabelWithFrame:CGRectMake(0, 0, screenW, labH) title:@"UIImage"];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((screenW - 250) * 0.5, CGRectGetMaxY(imgLab.frame) + padding, 250, 350)];
     [self.scrollView addSubview:imgView];
-    
     imgView.image = [[UIImage imageNamed:@"bookface.jpg"] imageByAddingCornerRadius:QQRadiusMake(20, 30, 40, 50)];
     
-    //UILabel/UIView/CALayer
-    UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UILabel/UIView/CALayer"];
-    UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 40)];
-    testLab.backgroundColor = [UIColor cyanColor];
+    //UIView/CALayer
+    UILabel *lab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame) + padding, screenW, labH) title:@"UIView/CALayer"];
+    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, screenW - 100, 100)];
+    testView.backgroundColor = [UIColor cyanColor];
+    [testView updateCornerRadius:^(QQCorner *corner) {
+        corner.radius = QQRadiusMakeSame(10);
+    }];
+    [self.scrollView addSubview:testView];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:^(QQCorner *corner) {
+        [testView updateCornerRadius:^(QQCorner *corner) {
             corner.radius = QQRadiusMakeSame(10);
             corner.borderColor = [UIColor blueColor];
         }];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:^(QQCorner *corner) {
+        [testView updateCornerRadius:^(QQCorner *corner) {
             corner.radius = QQRadiusMakeSame(15);
             corner.fillColor = [UIColor greenColor];
         }];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [testLab updateCornerRadius:^(QQCorner *corner) {
+        [testView updateCornerRadius:^(QQCorner *corner) {
             corner.radius = QQRadiusMakeSame(20);
             corner.borderColor = nil;
         }];
     });
     
-    testLab.font = [UIFont systemFontOfSize:14];
-    testLab.textColor = [UIColor blackColor];
-    testLab.textAlignment = NSTextAlignmentCenter;
-    testLab.text = @"带中文没事，纯英文显示不出来";
-    [self.scrollView addSubview:testLab];
-    
     //UIButton.SystemType
-    UILabel *btnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(testLab.frame) + padding, screenW, labH) title:@"UIButton.SystemType"];
+    UILabel *btnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(testView.frame) + padding, screenW, labH) title:@"UIButton.SystemType"];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(100, CGRectGetMaxY(btnLab.frame) + padding, screenW - 200, 30);
     btn.titleLabel.font = [UIFont systemFontOfSize:14];

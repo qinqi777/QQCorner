@@ -23,5 +23,4 @@
  */
 - (void)updateCornerRadius:(void(^)(QQCorner *corner))handler;
 
-
 @end
