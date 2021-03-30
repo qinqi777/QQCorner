@@ -86,17 +86,13 @@ static const char *qq_corner_key = "qq_corner_key";
     CGFloat height = qq_frame.size.height;
     CGFloat width = qq_frame.size.width;
     //左下
-    [path moveToPoint:CGPointMake(radius.upLeft, 0)];
-    [path addQuadCurveToPoint:CGPointMake(0, radius.upLeft) controlPoint:CGPointZero];
+    [path addArcWithCenter:CGPointMake(radius.downLeft, height - radius.downLeft) radius:radius.downLeft startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
     //左上
-    [path addLineToPoint:CGPointMake(0, height - radius.downLeft)];
-    [path addQuadCurveToPoint:CGPointMake(radius.downLeft, height) controlPoint:CGPointMake(0, height)];
+    [path addArcWithCenter:CGPointMake(radius.upLeft, radius.upLeft) radius:radius.upLeft startAngle:M_PI endAngle:M_PI_2 * 3 clockwise:YES];
     //右上
-    [path addLineToPoint:CGPointMake(width - radius.downRight, height)];
-    [path addQuadCurveToPoint:CGPointMake(width, height - radius.downRight) controlPoint:CGPointMake(width, height)];
+    [path addArcWithCenter:CGPointMake(width - radius.upRight, radius.upRight) radius:radius.upRight startAngle:M_PI_2 * 3 endAngle:0 clockwise:YES];
     //右下
-    [path addLineToPoint:CGPointMake(width, radius.upRight)];
-    [path addQuadCurveToPoint:CGPointMake(width - radius.upRight, 0) controlPoint:CGPointMake(width, 0)];
+    [path addArcWithCenter:CGPointMake(width - radius.downRight, height - radius.downRight) radius:radius.downRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
     [path closePath];
     [path addClip];
     

@@ -23,7 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		ADE9F96D21806E2600E6271E /* bookface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE9F96C21806E2600E6271E /* bookface.jpg */; };
-		E8570CD368F1D19F5972D85F /* Pods_QQCorner_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE7326A8FCBEB876AFA816 /* Pods_QQCorner_Example.framework */; };
+		DAB6ADB604E3EC972F3598B1 /* Pods_QQCorner_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE7326A8FCBEB876AFA816 /* Pods_QQCorner_Example.framework */; };
 		EA1790101C8D67853609358E /* Pods_QQCorner_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A5757EB84458D437EBBF7F /* Pods_QQCorner_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +79,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				E8570CD368F1D19F5972D85F /* Pods_QQCorner_Example.framework in Frameworks */,
+				DAB6ADB604E3EC972F3598B1 /* Pods_QQCorner_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				6F7511CAFEE477778244B533 /* [CP] Embed Pods Frameworks */,
+				57339877F9E62D0F9B84AC6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,7 +299,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F7511CAFEE477778244B533 /* [CP] Embed Pods Frameworks */ = {
+		57339877F9E62D0F9B84AC6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
