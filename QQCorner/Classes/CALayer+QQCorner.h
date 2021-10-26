@@ -11,8 +11,6 @@
 
 @interface CALayer (QQCorner)
 
-@property (nonatomic, strong) QQCorner *qq_corner;
-
 /**
  Add corner to a CALayer instance
  给一个CALayer对象添加圆角

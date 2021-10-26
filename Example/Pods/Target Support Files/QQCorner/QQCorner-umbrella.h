@@ -13,6 +13,7 @@
 #import "CALayer+QQCorner.h"
 #import "QQCorner.h"
 #import "QQCornerModel.h"
+#import "QQLayer.h"
 #import "UIImage+QQCorner.h"
 #import "UIView+QQCorner.h"
 

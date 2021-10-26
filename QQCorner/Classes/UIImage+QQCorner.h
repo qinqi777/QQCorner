@@ -41,7 +41,15 @@
  Create a UIImage with the contents of a layer.
  将layer的内容渲染为图片
  @param layer Whose contents will be rendered in the image.
- 将要被渲染到图片的layer
+ 将要被渲染为图片的layer
+ */
++ (UIImage *)imageWithLayer:(CALayer *)layer;
+
+/**
+ Create a UIImage with the contents of a layer.
+ 将layer的内容渲染为图片
+ @param layer Whose contents will be rendered in the image.
+ 将要被渲染为图片的layer
  @param radius The radiuses of 4 corners. If you pass QQRadiusZero, the final image will not add corner
  4个圆角的半径，如果传入QQRadiusZero，最终的图片将不添加圆角
  */

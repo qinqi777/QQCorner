@@ -48,7 +48,32 @@
         corner.radius = QQRadiusMakeSame(10);
     }];
     [self.scrollView addSubview:testView];
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(testView.frame) + padding, 100, 100)];
+    [bgView updateCornerRadius:^(QQCorner *corner) {
+        corner.fillColor = [UIColor blueColor];
+        corner.borderColor = [[UIColor cyanColor] colorWithAlphaComponent:0.5];
+        corner.borderWidth = 10.0;
+        corner.radius = QQRadiusMakeSame(50);
+    }];
+    bgView.layer.shadowColor = [UIColor blackColor].CGColor;
+    bgView.layer.shadowOffset = CGSizeMake(10, 20);
+    bgView.layer.shadowRadius = 24;
+    bgView.layer.shadowOpacity = 1;
+    [self.scrollView addSubview:bgView];
+    
+    UIImageView *testImgView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(bgView.frame) + padding, CGRectGetMaxY(testView.frame) + padding, 100, 100)];
+    testImgView.image = [UIImage imageWithQQCorner:^(QQCorner *corner) {
+        corner.fillColor = [UIColor blueColor];
+        corner.borderColor = [[UIColor cyanColor] colorWithAlphaComponent:0.5];
+        corner.borderWidth = 10.0;
+        corner.radius = QQRadiusMakeSame(50);
+    } size:testImgView.bounds.size];
+//    testImgView.image = [UIImage imageWithLayer:bgView2.layer cornerRadius:QQRadiusZero];
+    [self.scrollView addSubview:testImgView];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        testView.frame = CGRectMake(50, CGRectGetMaxY(lab.frame) + padding, 100, 50);
         [testView updateCornerRadius:^(QQCorner *corner) {
             corner.radius = QQRadiusMakeSame(10);
             corner.borderColor = [UIColor blueColor];
@@ -68,7 +93,7 @@
     });
     
     //UIButton.SystemType
-    UILabel *btnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(testView.frame) + padding, screenW, labH) title:@"UIButton.SystemType"];
+    UILabel *btnLab = [self createLabelWithFrame:CGRectMake(0, CGRectGetMaxY(testImgView.frame) + padding, screenW, labH) title:@"UIButton.SystemType"];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(100, CGRectGetMaxY(btnLab.frame) + padding, screenW - 200, 30);
     btn.titleLabel.font = [UIFont systemFontOfSize:14];

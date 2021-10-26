@@ -10,24 +10,47 @@
 #import "QQCornerModel.h"
 #import <objc/runtime.h>
 
+@interface CALayer ()
+
+@property (nonatomic, strong) QQCorner *qq_corner;
+@property (nonatomic, strong) CAShapeLayer *qq_fill_layer;
+@property (nonatomic, strong) CAShapeLayer *qq_border_layer;
+
+@end
+
 @implementation CALayer (QQCorner)
 
-static const char *qq_layer_key = "qq_layer_key";
+static const char *qq_fill_layer_key = "qq_fill_layer_key";
+static const char *qq_border_layer_key = "qq_border_layer_key";
 static const char *qq_corner_key = "qq_corner_key";
 
-- (CAShapeLayer *)qq_layer {
-    CAShapeLayer *layer = objc_getAssociatedObject(self, &qq_layer_key);
+- (CAShapeLayer *)qq_fill_layer {
+    CAShapeLayer *layer = objc_getAssociatedObject(self, &qq_fill_layer_key);
     if (!layer) {
         layer = [CAShapeLayer layer];
-        layer.frame = self.bounds;
         [self insertSublayer:layer atIndex:0];
-        self.qq_layer = layer;
+        self.qq_fill_layer = layer;
     }
     return layer;
 }
 
-- (void)setQq_layer:(CAShapeLayer *)qq_layer {
-    objc_setAssociatedObject(self, &qq_layer_key, qq_layer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setQq_fill_layer:(CAShapeLayer *)qq_fill_layer {
+    objc_setAssociatedObject(self, &qq_fill_layer_key, qq_fill_layer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CAShapeLayer *)qq_border_layer {
+    CAShapeLayer *layer = objc_getAssociatedObject(self, &qq_border_layer_key);
+    if (!layer) {
+        layer = [CAShapeLayer layer];
+        layer.fillColor = nil;
+        [self.qq_fill_layer addSublayer:layer];
+        self.qq_border_layer = layer;
+    }
+    return layer;
+}
+
+- (void)setQq_border_layer:(CAShapeLayer *)qq_border_layer {
+    objc_setAssociatedObject(self, &qq_border_layer_key, qq_border_layer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (QQCorner *)qq_corner {
@@ -74,17 +97,29 @@ static const char *qq_corner_key = "qq_corner_key";
     if (self.qq_corner.borderWidth < 0) {
         self.qq_corner.borderWidth = 0;
     }
-    
-    CGRect qq_frame = self.bounds;
-    qq_frame.origin.x = self.qq_corner.borderWidth * 0.5;
-    qq_frame.origin.y = self.qq_corner.borderWidth * 0.5;
-    qq_frame.size.width -= self.qq_corner.borderWidth;
-    qq_frame.size.height -= self.qq_corner.borderWidth;
-    self.qq_layer.frame = qq_frame;
-    
+    //更新frame
+    self.qq_fill_layer.frame = self.bounds;
+    CGFloat borderXY = self.qq_corner.borderWidth * 0.5;
+    CGFloat borderW = self.bounds.size.width - self.qq_corner.borderWidth;
+    CGFloat borderH = self.bounds.size.height - self.qq_corner.borderWidth;
+    self.qq_border_layer.frame = CGRectMake(borderXY, borderXY, borderW, borderH);
+    //填充
+    UIBezierPath *fillPath = [self pathWithRadius:radius width:self.qq_fill_layer.bounds.size.width height:self.qq_fill_layer.bounds.size.height];
+    self.qq_fill_layer.fillColor = fill;
+    self.qq_fill_layer.path = fillPath.CGPath;
+    //边框
+    radius.upLeft -= borderXY;
+    radius.upRight -= borderXY;
+    radius.downLeft -= borderXY;
+    radius.downRight -= borderXY;
+    UIBezierPath *borderPath = [self pathWithRadius:radius width:borderW height:borderH];
+    self.qq_border_layer.strokeColor = self.qq_corner.borderColor.CGColor;
+    self.qq_border_layer.lineWidth = self.qq_corner.borderWidth;
+    self.qq_border_layer.path = borderPath.CGPath;
+}
+
+- (UIBezierPath *)pathWithRadius:(QQRadius)radius width:(CGFloat)width height:(CGFloat)height {
     UIBezierPath *path = [UIBezierPath bezierPath];
-    CGFloat height = qq_frame.size.height;
-    CGFloat width = qq_frame.size.width;
     //左下
     [path addArcWithCenter:CGPointMake(radius.downLeft, height - radius.downLeft) radius:radius.downLeft startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
     //左上
@@ -95,11 +130,7 @@ static const char *qq_corner_key = "qq_corner_key";
     [path addArcWithCenter:CGPointMake(width - radius.downRight, height - radius.downRight) radius:radius.downRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
     [path closePath];
     [path addClip];
-    
-    self.qq_layer.fillColor = fill;
-    self.qq_layer.strokeColor = self.qq_corner.borderColor.CGColor;
-    self.qq_layer.lineWidth = self.qq_corner.borderWidth;
-    self.qq_layer.path = path.CGPath;
+    return path;
 }
 
 @end

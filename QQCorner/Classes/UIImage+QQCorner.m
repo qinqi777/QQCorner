@@ -8,10 +8,11 @@
 
 #import "UIImage+QQCorner.h"
 #import "QQCornerModel.h"
+#import "CALayer+QQCorner.h"
 
 @implementation UIImage (QQCorner)
 
-static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
++ (UIBezierPath *)pathWithCornerRadius:(QQRadius)radius size:(CGSize)size {
     CGFloat imgW = size.width;
     CGFloat imgH = size.height;
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -24,6 +25,7 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
     //右下
     [path addArcWithCenter:CGPointMake(imgW - radius.downRight, imgH - radius.downRight) radius:radius.downRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
     [path closePath];
+    [path addClip];
     return path;
 }
 
@@ -73,61 +75,32 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
 }
 
 + (UIImage *)imageWithQQCorner:(void (^)(QQCorner *))handler size:(CGSize)size {
-    QQCorner *corner = [[QQCorner alloc] init];
-    if (handler) {
-        handler(corner);
-    }
-    if (!corner.fillColor) {
-        corner.fillColor = [UIColor clearColor];
-    }
-    UIBezierPath *path = qq_pathWithCornerRadius(corner.radius, size);
-    if (@available(iOS 10.0, *)) {
-        UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:size];
-        return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-            CGContextSetStrokeColorWithColor(rendererContext.CGContext, corner.borderColor.CGColor);
-            CGContextSetFillColorWithColor(rendererContext.CGContext, corner.fillColor.CGColor);
-            CGContextSetLineWidth(rendererContext.CGContext, corner.borderWidth);
-            [path addClip];
-            CGContextAddPath(rendererContext.CGContext, path.CGPath);
-            CGContextDrawPath(rendererContext.CGContext, kCGPathFillStroke);
-        }];
-    } else {
-        UIGraphicsBeginImageContext(size);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetStrokeColorWithColor(context, corner.borderColor.CGColor);
-        CGContextSetFillColorWithColor(context, corner.fillColor.CGColor);
-        CGContextSetLineWidth(context, corner.borderWidth);
-        CGContextAddPath(context, path.CGPath);
-        [path addClip];
-        CGContextDrawPath(context, kCGPathFillStroke);
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return image;
-    }
+    CALayer *layer = [CALayer layer];
+    layer.frame = (CGRect){CGPointZero, size};
+    [layer updateCornerRadius:handler];
+    return [self imageWithLayer:layer];
 }
 
 - (UIImage *)imageByAddingCornerRadius:(QQRadius)radius {
-    UIBezierPath *path = qq_pathWithCornerRadius(radius, self.size);
+    UIBezierPath *path = [UIImage pathWithCornerRadius:radius size:self.size];
     if (@available(iOS 10.0, *)) {
         UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:self.size];
         return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-            [path addClip];
             CGContextAddPath(rendererContext.CGContext, path.CGPath);
+            CGContextClip(rendererContext.CGContext);
             [self drawInRect:(CGRect){CGPointZero, self.size}];
         }];
     } else {
-        UIGraphicsBeginImageContext(self.size);
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
-        [path addClip];
         CGContextAddPath(context, path.CGPath);
+        CGContextClip(context);
         [self drawInRect:(CGRect){CGPointZero, self.size}];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return image;
     }
 }
-
-
 
 + (UIImage *)imageWithColor:(UIColor *)color {
     return [self imageWithColor:color size:CGSizeMake(1, 1) cornerRadius:QQRadiusZero];
@@ -138,8 +111,7 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
         UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:size];
         return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
             if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
-                UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
-                [path addClip];
+                UIBezierPath *path = [self pathWithCornerRadius:radius size:size];
                 CGContextAddPath(rendererContext.CGContext, path.CGPath);
             }
             CGContextSetFillColorWithColor(rendererContext.CGContext, color.CGColor);
@@ -149,8 +121,7 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
         UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
-            UIBezierPath *path = qq_pathWithCornerRadius(radius, size);
-            [path addClip];
+            UIBezierPath *path = [self pathWithCornerRadius:radius size:size];
             CGContextAddPath(context, path.CGPath);
         }
         CGContextSetFillColorWithColor(context, color.CGColor);
@@ -161,29 +132,31 @@ static UIBezierPath * qq_pathWithCornerRadius(QQRadius radius, CGSize size) {
     }
 }
 
++ (UIImage *)imageWithLayer:(CALayer *)layer {
+    return [self imageWithLayer:layer cornerRadius:QQRadiusZero];
+}
+
 + (UIImage *)imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius {
     if (@available(iOS 10.0, *)) {
         UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:layer.bounds.size];
         return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
             if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
-                UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
-                [path addClip];
+                UIBezierPath *path = [self pathWithCornerRadius:radius size:layer.bounds.size];
                 CGContextAddPath(rendererContext.CGContext, path.CGPath);
             }
             [layer renderInContext:rendererContext.CGContext];
         }];
     } else {
-        UIGraphicsBeginImageContext(layer.bounds.size);
+        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, [UIScreen mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
-            UIBezierPath *path = qq_pathWithCornerRadius(radius, layer.bounds.size);
-            [path addClip];
+            UIBezierPath *path = [self pathWithCornerRadius:radius size:layer.bounds.size];
             CGContextAddPath(context, path.CGPath);
         }
         [layer renderInContext:context];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        return image;        
+        return image;
     }
 }
 
