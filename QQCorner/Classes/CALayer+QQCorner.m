@@ -98,13 +98,17 @@ static const char *qq_corner_key = "qq_corner_key";
         self.qq_corner.borderWidth = 0;
     }
     //更新frame
-    self.qq_fill_layer.frame = self.bounds;
+    CGRect frame = self.bounds;
+    if (!CGRectIsEmpty(self.qq_corner.frame)) {
+        frame = self.qq_corner.frame;
+    }
+    self.qq_fill_layer.frame = frame;
     CGFloat borderXY = self.qq_corner.borderWidth * 0.5;
-    CGFloat borderW = self.bounds.size.width - self.qq_corner.borderWidth;
-    CGFloat borderH = self.bounds.size.height - self.qq_corner.borderWidth;
+    CGFloat borderW = frame.size.width - self.qq_corner.borderWidth;
+    CGFloat borderH = frame.size.height - self.qq_corner.borderWidth;
     self.qq_border_layer.frame = CGRectMake(borderXY, borderXY, borderW, borderH);
     //填充
-    UIBezierPath *fillPath = [self pathWithRadius:radius width:self.qq_fill_layer.bounds.size.width height:self.qq_fill_layer.bounds.size.height];
+    UIBezierPath *fillPath = [self pathWithRadius:radius width:frame.size.width height:frame.size.height];
     self.qq_fill_layer.fillColor = fill;
     self.qq_fill_layer.path = fillPath.CGPath;
     //边框

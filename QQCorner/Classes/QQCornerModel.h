@@ -48,7 +48,6 @@ typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
     QQGradualChangeTypeUpRightToDownLeft
 };
 
-
 @interface QQGradualChangingColor : NSObject
 
 @property (nonatomic, strong) UIColor *fromColor;
@@ -60,6 +59,8 @@ typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
 
 @interface QQCorner : NSObject
 
+/**The frame of corners.   内部圆角的frame*/
+@property (nonatomic, assign) CGRect frame;
 /**The radiuses of 4 corners.   4个圆角的半径*/
 @property (nonatomic, assign) QQRadius radius;
 /**The color that will fill the layer/view. 将要填充layer/view的颜色*/

@@ -1,6 +1,0 @@
-framework module QQCorner {
-  umbrella header "QQCorner-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QQCorner'
-  s.version          = '2.0.1'
+  s.version          = '2.0.2'
   s.summary          = 'Some categories that add corner to UIView/CALayer or UIImage.'
 
   s.description      = 'Some categories that add corner to UIView/CALayer or UIImage, that you can easily add different corners.'

@@ -22,6 +22,11 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		ADD612372746205D00792B92 /* UIView+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD6122D2746205D00792B92 /* UIView+QQCorner.m */; };
+		ADD612382746205D00792B92 /* UIImage+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD6122E2746205D00792B92 /* UIImage+QQCorner.m */; };
+		ADD612392746205D00792B92 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = ADD6122F2746205D00792B92 /* .gitkeep */; };
+		ADD6123A2746205D00792B92 /* QQCornerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD612302746205D00792B92 /* QQCornerModel.m */; };
+		ADD6123B2746205D00792B92 /* CALayer+QQCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD612312746205D00792B92 /* CALayer+QQCorner.m */; };
 		ADE9F96D21806E2600E6271E /* bookface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE9F96C21806E2600E6271E /* bookface.jpg */; };
 		DAB6ADB604E3EC972F3598B1 /* Pods_QQCorner_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE7326A8FCBEB876AFA816 /* Pods_QQCorner_Example.framework */; };
 		EA1790101C8D67853609358E /* Pods_QQCorner_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A5757EB84458D437EBBF7F /* Pods_QQCorner_Tests.framework */; };
@@ -64,6 +69,16 @@
 		7432644FAC74BDB7720B9BEF /* Pods-QQCorner_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQCorner_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQCorner_Tests/Pods-QQCorner_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93D69AA383850A8647581420 /* Pods-QQCorner_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQCorner_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQCorner_Tests/Pods-QQCorner_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		ADD6122D2746205D00792B92 /* UIView+QQCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QQCorner.m"; sourceTree = "<group>"; };
+		ADD6122E2746205D00792B92 /* UIImage+QQCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QQCorner.m"; sourceTree = "<group>"; };
+		ADD6122F2746205D00792B92 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		ADD612302746205D00792B92 /* QQCornerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQCornerModel.m; sourceTree = "<group>"; };
+		ADD612312746205D00792B92 /* CALayer+QQCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+QQCorner.m"; sourceTree = "<group>"; };
+		ADD612322746205D00792B92 /* UIView+QQCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QQCorner.h"; sourceTree = "<group>"; };
+		ADD612332746205D00792B92 /* UIImage+QQCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QQCorner.h"; sourceTree = "<group>"; };
+		ADD612342746205D00792B92 /* QQCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQCorner.h; sourceTree = "<group>"; };
+		ADD612352746205D00792B92 /* CALayer+QQCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+QQCorner.h"; sourceTree = "<group>"; };
+		ADD612362746205D00792B92 /* QQCornerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQCornerModel.h; sourceTree = "<group>"; };
 		ADE9F96C21806E2600E6271E /* bookface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookface.jpg; sourceTree = "<group>"; };
 		BAC7958150A1714704176439 /* QQCorner.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = QQCorner.podspec; path = ../QQCorner.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D114E677A8D31796CA255A4A /* Pods-QQCorner_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQCorner_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE9F96C21806E2600E6271E /* bookface.jpg */,
+				ADD6122C2746205D00792B92 /* Classes */,
 				6003F59C195388D20070C39A /* QQAppDelegate.h */,
 				6003F59D195388D20070C39A /* QQAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -199,6 +215,24 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		ADD6122C2746205D00792B92 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADD6122F2746205D00792B92 /* .gitkeep */,
+				ADD612352746205D00792B92 /* CALayer+QQCorner.h */,
+				ADD612312746205D00792B92 /* CALayer+QQCorner.m */,
+				ADD612342746205D00792B92 /* QQCorner.h */,
+				ADD612362746205D00792B92 /* QQCornerModel.h */,
+				ADD612302746205D00792B92 /* QQCornerModel.m */,
+				ADD612332746205D00792B92 /* UIImage+QQCorner.h */,
+				ADD6122E2746205D00792B92 /* UIImage+QQCorner.m */,
+				ADD612322746205D00792B92 /* UIView+QQCorner.h */,
+				ADD6122D2746205D00792B92 /* UIView+QQCorner.m */,
+			);
+			name = Classes;
+			path = ../../QQCorner/Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,7 +244,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				7E2CBD75710D7BF1E60EA439 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,6 +315,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				ADD612392746205D00792B92 /* .gitkeep in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				ADE9F96D21806E2600E6271E /* bookface.jpg in Resources */,
 			);
@@ -298,24 +332,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E2CBD75710D7BF1E60EA439 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/QQCorner/QQCorner.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QQCorner.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QQCorner_Example/Pods-QQCorner_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D3F91FC347C1485619AFA214 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,9 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD612382746205D00792B92 /* UIImage+QQCorner.m in Sources */,
 				6003F59E195388D20070C39A /* QQAppDelegate.m in Sources */,
+				ADD6123A2746205D00792B92 /* QQCornerModel.m in Sources */,
 				6003F5A7195388D20070C39A /* QQViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				ADD612372746205D00792B92 /* UIView+QQCorner.m in Sources */,
+				ADD6123B2746205D00792B92 /* CALayer+QQCorner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
