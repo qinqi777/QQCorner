@@ -133,7 +133,6 @@ static const char *qq_corner_key = "qq_corner_key";
     //右下
     [path addArcWithCenter:CGPointMake(width - radius.downRight, height - radius.downRight) radius:radius.downRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
     [path closePath];
-    [path addClip];
     return path;
 }
 
