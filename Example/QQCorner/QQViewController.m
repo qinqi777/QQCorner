@@ -30,7 +30,14 @@
 }
 
 - (void)configureSubviews {
-    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
+    UIScreen *screen = nil;
+    if (@available(iOS 13.0, *)) {
+        UIWindowScene *windowScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.anyObject;
+        screen = windowScene.screen;
+    } else {
+        screen = [UIScreen mainScreen];
+    }
+    CGFloat screenW = screen.bounds.size.width;
     CGFloat labH = 30;
     CGFloat padding = 20;
     

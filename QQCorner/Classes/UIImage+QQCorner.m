@@ -91,11 +91,18 @@
             [self drawInRect:(CGRect){CGPointZero, self.size}];
         }];
     } else {
-        UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+        CGSize imgSize = self.size;
+        if (imgSize.width <= 0) {
+            imgSize.width = 1;
+        }
+        if (imgSize.height <= 0) {
+            imgSize.height = 1;
+        }
+        UIGraphicsBeginImageContextWithOptions(imgSize, NO, [UIImage mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextAddPath(context, path.CGPath);
         CGContextClip(context);
-        [self drawInRect:(CGRect){CGPointZero, self.size}];
+        [self drawInRect:(CGRect){CGPointZero, imgSize}];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return image;
@@ -118,7 +125,13 @@
             CGContextFillRect(rendererContext.CGContext, (CGRect){CGPointZero, size});
         }];
     } else {
-        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        if (size.width <= 0) {
+            size.width = 1;
+        }
+        if (size.height <= 0) {
+            size.height = 1;
+        }
+        UIGraphicsBeginImageContextWithOptions(size, NO, [self mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
             UIBezierPath *path = [self pathWithCornerRadius:radius size:size];
@@ -147,16 +160,32 @@
             [layer renderInContext:rendererContext.CGContext];
         }];
     } else {
-        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, [UIScreen mainScreen].scale);
+        CGSize size = layer.bounds.size;
+        if (size.width <= 0) {
+            size.width = 1;
+        }
+        if (size.height <= 0) {
+            size.height = 1;
+        }
+        UIGraphicsBeginImageContextWithOptions(size, NO, [self mainScreen].scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
         if (!QQRadiusIsEqual(radius, QQRadiusZero)) {
-            UIBezierPath *path = [self pathWithCornerRadius:radius size:layer.bounds.size];
+            UIBezierPath *path = [self pathWithCornerRadius:radius size:size];
             CGContextAddPath(context, path.CGPath);
         }
         [layer renderInContext:context];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return image;
+    }
+}
+
++ (UIScreen *)mainScreen {
+    if (@available(iOS 13.0, *)) {
+        UIWindowScene *windowScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.anyObject;
+        return windowScene.screen;
+    } else {
+        return [UIScreen mainScreen];
     }
 }
 
