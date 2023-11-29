@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/qinqi777/QQCorner'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'QinQi' => 'qinqi376990311@163.com' }
+  s.author           = { 'Se7en' => 'qinqi376990311@163.com' }
   s.source           = { :git => 'https://github.com/qinqi777/QQCorner.git', :tag => s.version.to_s }
   s.social_media_url = 'https://blog.csdn.net/qinqi376990311'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = 'QQCorner/Classes/**/*.{h,m}'
   s.requires_arc = true
   s.frameworks = 'CoreGraphics', 'QuartzCore', 'UIKit'  
