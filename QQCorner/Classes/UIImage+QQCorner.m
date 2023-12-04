@@ -60,10 +60,10 @@
         }
             break;
         case QQGradualChangeTypeUpRightToDownLeft: {
-            startX = 0;
-            startY = 1;
-            endX = 1;
-            endY = 0;
+            startX = 1;
+            startY = 0;
+            endX = 0;
+            endY = 1;
         }
             break;
     }
