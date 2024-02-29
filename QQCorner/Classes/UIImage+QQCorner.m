@@ -29,8 +29,20 @@
     return path;
 }
 
-+ (UIImage *)imageWithGradualChangingColor:(void (^)(QQGradualChangingColor *))handler size:(CGSize)size cornerRadius:(QQRadius)radius {
++ (UIImage *)imageWithGradualChangingColor:(void(^)(QQGradualChangingColor *graColor))handler size:(CGSize)size cornerRadius:(QQRadius)radius {
     QQGradualChangingColor *graColor = [[QQGradualChangingColor alloc] init];
+    if (handler) {
+        handler(graColor);
+    }
+    return [self imageWithMutipleGradualChangingColor:^(QQMutipleGradualChangingColor *mutipleGra) {
+        mutipleGra.colors = @[graColor.fromColor, graColor.toColor];
+        mutipleGra.locations = @[@0.0, @1.0];
+        mutipleGra.type = graColor.type;
+    } size:size cornerRadius:radius];
+}
+
++ (UIImage *)imageWithMutipleGradualChangingColor:(void(^)(QQMutipleGradualChangingColor *graColor))handler size:(CGSize)size cornerRadius:(QQRadius)radius {
+    QQMutipleGradualChangingColor *graColor = [[QQMutipleGradualChangingColor alloc] init];
     if (handler) {
         handler(graColor);
     }
@@ -38,6 +50,7 @@
     graLayer.frame = (CGRect){CGPointZero, size};
     CGFloat startX = 0, startY = 0, endX = 0, endY = 0;
     switch (graColor.type) {
+        //左上 -> 右下
         case QQGradualChangeTypeUpLeftToDownRight: {
             startX = 0;
             startY = 0;
@@ -45,20 +58,7 @@
             endY = 1;
         }
             break;
-        case QQGradualChangeTypeUpToDown: {
-            startX = 0;
-            startY = 0;
-            endX = 0;
-            endY = 1;
-        }
-            break;
-        case QQGradualChangeTypeLeftToRight: {
-            startX = 0;
-            startY = 0;
-            endX = 1;
-            endY = 0;
-        }
-            break;
+        ///右上 -> 左下
         case QQGradualChangeTypeUpRightToDownLeft: {
             startX = 1;
             startY = 0;
@@ -66,19 +66,39 @@
             endY = 1;
         }
             break;
+        //上 -> 下
+        case QQGradualChangeTypeUpToDown: {
+            startX = 0;
+            startY = 0;
+            endX = 0;
+            endY = 1;
+        }
+            break;
+        //左 -> 右
+        case QQGradualChangeTypeLeftToRight: {
+            startX = 0;
+            startY = 0;
+            endX = 1;
+            endY = 0;
+        }
+            break;
     }
     graLayer.startPoint = CGPointMake(startX, startY);
     graLayer.endPoint = CGPointMake(endX, endY);
-    graLayer.colors = @[(__bridge id)graColor.fromColor.CGColor, (__bridge id)graColor.toColor.CGColor];
-    graLayer.locations = @[@0.0, @1.0];
-    return [self imageWithLayer:graLayer cornerRadius:radius];
+    NSMutableArray *cgColors = [@[] mutableCopy];
+    [graColor.colors enumerateObjectsUsingBlock:^(UIColor * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [cgColors addObject:(__bridge id)obj.CGColor];
+    }];
+    graLayer.colors = cgColors;
+    graLayer.locations = graColor.locations;
+    return [self qq_imageWithLayer:graLayer cornerRadius:radius];
 }
 
-+ (UIImage *)imageWithQQCorner:(void (^)(QQCorner *))handler size:(CGSize)size {
++ (UIImage *)imageWithQQCorner:(void(^)(QQCorner *corner))handler size:(CGSize)size {
     CALayer *layer = [CALayer layer];
     layer.frame = (CGRect){CGPointZero, size};
     [layer updateCornerRadius:handler];
-    return [self imageWithLayer:layer];
+    return [self qq_imageWithLayer:layer];
 }
 
 - (UIImage *)imageByAddingCornerRadius:(QQRadius)radius {
@@ -109,11 +129,11 @@
     }
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    return [self imageWithColor:color size:CGSizeMake(1, 1) cornerRadius:QQRadiusZero];
++ (UIImage *)qq_imageWithColor:(UIColor *)color {
+    return [self qq_imageWithColor:color size:CGSizeMake(1, 1) cornerRadius:QQRadiusZero];
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(QQRadius)radius {
++ (UIImage *)qq_imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(QQRadius)radius {
     if (@available(iOS 10.0, *)) {
         UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:size];
         return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
@@ -145,11 +165,11 @@
     }
 }
 
-+ (UIImage *)imageWithLayer:(CALayer *)layer {
-    return [self imageWithLayer:layer cornerRadius:QQRadiusZero];
++ (UIImage *)qq_imageWithLayer:(CALayer *)layer {
+    return [self qq_imageWithLayer:layer cornerRadius:QQRadiusZero];
 }
 
-+ (UIImage *)imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius {
++ (UIImage *)qq_imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius {
     if (@available(iOS 10.0, *)) {
         UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithSize:layer.bounds.size];
         return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {

@@ -12,6 +12,9 @@
 
 @end
 
+@implementation QQMutipleGradualChangingColor
+
+@end
 
 @implementation QQCorner
 

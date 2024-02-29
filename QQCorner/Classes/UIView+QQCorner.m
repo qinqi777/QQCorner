@@ -12,7 +12,7 @@
 
 @implementation UIView (QQCorner)
 
-- (void)updateCornerRadius:(void (^)(QQCorner *))handler {
+- (void)updateCornerRadius:(void(^)(QQCorner *))handler {
     [self.layer updateCornerRadius:^(QQCorner *corner) {
         if (handler) {
             handler(corner);

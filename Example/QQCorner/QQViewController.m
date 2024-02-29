@@ -76,7 +76,7 @@
         corner.borderWidth = 10.0;
         corner.radius = QQRadiusMakeSame(50);
     } size:testImgView.bounds.size];
-//    testImgView.image = [UIImage imageWithLayer:bgView2.layer cornerRadius:QQRadiusZero];
+//    testImgView.image = [UIImage qq_imageWithLayer:bgView2.layer cornerRadius:QQRadiusZero];
     [self.scrollView addSubview:testImgView];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -106,7 +106,7 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:14];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage qq_imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
     
     [btn setTitle:@"纯色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:btn];
@@ -146,7 +146,7 @@
     customBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [customBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [customBtn setBackgroundImage:[UIImage imageWithColor:[UIColor magentaColor] size:customBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
+    [customBtn setBackgroundImage:[UIImage qq_imageWithColor:[UIColor magentaColor] size:customBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
     
     [customBtn setTitle:@"纯色带圆角按钮" forState:UIControlStateNormal];
     [self.scrollView addSubview:customBtn];
@@ -159,7 +159,7 @@
     [customGraBtn setBackgroundImage:[UIImage imageWithGradualChangingColor:^(QQGradualChangingColor *graColor) {
         graColor.fromColor = [UIColor purpleColor];
         graColor.toColor = [UIColor brownColor];
-        graColor.type = QQGradualChangeTypeUpLeftToDownRight;
+        graColor.type = QQGradualChangeTypeUpRightToDownLeft;
     } size:customGraBtn.bounds.size cornerRadius:QQRadiusMakeSame(15)] forState:UIControlStateNormal];
     
     [customGraBtn setTitle:@"渐变色带圆角按钮" forState:UIControlStateNormal];

@@ -57,7 +57,7 @@ pod 'QQCorner'
     //UIButton set image/backgroundImage
     //给UIButton设置Image或backgroundImage
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage qq_imageWithColor:[UIColor blueColor] size:btn.bounds.size cornerRadius:QQRadiusMake(15, 15, 5, 5)] forState:UIControlStateNormal];
   
     //Gradual changing color
     //简单的渐变色，支持两个颜色4种渐变方式

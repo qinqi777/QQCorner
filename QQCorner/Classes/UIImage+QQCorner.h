@@ -23,7 +23,7 @@
  Create a UIImage by UIColor.
  通过颜色创建图片，大小为 1 x 1
  */
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)qq_imageWithColor:(UIColor *)color;
 
 /**
  Create a UIImage with corner by UIColor.
@@ -35,7 +35,7 @@
  @param radius The radiuses of 4 corners.
  4个圆角的半径
  */
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(QQRadius)radius;
++ (UIImage *)qq_imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(QQRadius)radius;
 
 /**
  Create a UIImage with the contents of a layer.
@@ -43,7 +43,7 @@
  @param layer Whose contents will be rendered in the image.
  将要被渲染为图片的layer
  */
-+ (UIImage *)imageWithLayer:(CALayer *)layer;
++ (UIImage *)qq_imageWithLayer:(CALayer *)layer;
 
 /**
  Create a UIImage with the contents of a layer.
@@ -53,7 +53,7 @@
  @param radius The radiuses of 4 corners. If you pass QQRadiusZero, the final image will not add corner
  4个圆角的半径，如果传入QQRadiusZero，最终的图片将不添加圆角
  */
-+ (UIImage *)imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius;
++ (UIImage *)qq_imageWithLayer:(CALayer *)layer cornerRadius:(QQRadius)radius;
 
 /**
  Create a UIImage with gradual changing color.
@@ -66,6 +66,18 @@
  4个圆角的半径，如果传入QQRadiusZero，最终的图片将不添加圆角
  */
 + (UIImage *)imageWithGradualChangingColor:(void(^)(QQGradualChangingColor *graColor))handler size:(CGSize)size cornerRadius:(QQRadius)radius;
+
+/**
+ Create a UIImage with mutiple gradual changing colors.
+ 创建一个多颜色渐变色的图片
+ @param graColor gradual changing color properties.
+ 渐变色的属性
+ @param size The size of the image.
+ 图片的尺寸
+ @param radius The radiuses of 4 corners. If you pass QQRadiusZero, the final image will not add corner
+ 4个圆角的半径，如果传入QQRadiusZero，最终的图片将不添加圆角
+ */
++ (UIImage *)imageWithMutipleGradualChangingColor:(void(^)(QQMutipleGradualChangingColor *graColor))handler size:(CGSize)size cornerRadius:(QQRadius)radius;
 
 /**
  Create a UIImage with border and corner. Always uses in UIButton

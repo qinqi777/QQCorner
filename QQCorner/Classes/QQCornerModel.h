@@ -42,16 +42,31 @@ NS_INLINE QQRadius QQRadiusMakeSame(CGFloat radius) {
 
 
 typedef NS_ENUM(NSUInteger, QQGradualChangeType) {
+    ///左上 -> 右下
     QQGradualChangeTypeUpLeftToDownRight = 0,
+    ///右上 -> 左下
+    QQGradualChangeTypeUpRightToDownLeft,
+    ///上 -> 下
     QQGradualChangeTypeUpToDown,
+    ///左 -> 右
     QQGradualChangeTypeLeftToRight,
-    QQGradualChangeTypeUpRightToDownLeft
 };
 
 @interface QQGradualChangingColor : NSObject
 
 @property (nonatomic, strong) UIColor *fromColor;
 @property (nonatomic, strong) UIColor *toColor;
+@property (nonatomic, assign) QQGradualChangeType type;
+
+@end
+
+@interface QQMutipleGradualChangingColor : NSObject
+
+///Mutiple gradual changing colors.    多种颜色的渐变
+@property (nonatomic, copy) NSArray<UIColor *> *colors;
+///The location of every color.    每个颜色的起始位置，取值范围 0 - 1    eg. @[@0.0, @0.6, @1.0]
+@property (nonatomic, copy) NSArray<NSNumber *> *locations;
+
 @property (nonatomic, assign) QQGradualChangeType type;
 
 @end
