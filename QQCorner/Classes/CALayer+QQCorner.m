@@ -58,12 +58,24 @@ static const char *qq_corner_key = "qq_corner_key";
     if (!corner) {
         corner = [[QQCorner alloc] init];
         self.qq_corner = corner;
+        [self addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
     }
     return corner;
 }
 
 - (void)setQq_corner:(QQCorner *)qq_corner {
     objc_setAssociatedObject(self, &qq_corner_key, qq_corner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)dealloc {
+    QQCorner *corner = objc_getAssociatedObject(self, &qq_corner_key);
+    if (corner) {
+        [self removeObserver:self forKeyPath:@"bounds"];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    [self updateCornerRadius:nil];
 }
 
 - (void)updateCornerRadius:(void(^)(QQCorner *))handler {
